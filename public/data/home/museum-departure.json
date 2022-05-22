@@ -1,0 +1,42 @@
+{
+    "title": "Музей на выезд",
+    "descr": "Наш музей…мобилен! Это удивительно, но вполне возможно воссоздать обстановку и атмосферу недавнего прошлого, на любой площадке.",
+    "notice": "Любая из комнат может приехать к вам на площадку",
+    "linkText": "Подробнее",
+    "link": "/",
+    "galleryCaption": "Воссоздаем стиль СССР  на любой локации с помощью",
+    "cards": [
+        {
+            "imgSrc": "/img/home/departure-1.jpg",
+            "text": "Ретро-декора"
+        },
+        {
+            "imgSrc": "/img/home/departure-2.jpg",
+            "text": "Советких фотозон"
+        },
+        {
+            "imgSrc": "/img/home/departure-3.jpg",
+            "text": "Ретро-активностей"
+        },
+        {
+            "imgSrc": "/img/home/departure-4.jpg",
+            "text": "Аниматоров"
+        },
+        {
+            "imgSrc": "/img/home/departure-1.jpg",
+            "text": "Ретро-декора"
+        },
+        {
+            "imgSrc": "/img/home/departure-2.jpg",
+            "text": "Советких фотозон"
+        },
+        {
+            "imgSrc": "/img/home/departure-3.jpg",
+            "text": "Ретро-активностей"
+        },
+        {
+            "imgSrc": "/img/home/departure-4.jpg",
+            "text": "Аниматоров"
+        }
+    ]
+}

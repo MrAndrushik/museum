@@ -1,0 +1,181 @@
+@import "../const";
+
+.previewBlock {
+    color: $black;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $xl) {
+    }
+}
+
+.title {
+    margin-bottom: 32px;
+
+    @media (max-width: $xxl) {
+        margin-bottom: 24px;
+    }
+}
+
+.link {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30%;
+    width: 180px;
+    height: 180px;
+    background-color: $light-green;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+
+    @media (max-width: $xxl) {
+        width: 148px;
+        height: 148px;
+    }
+
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.imgDesc {
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.imgMobile {
+    display: none;
+    @media (max-width: $xl) {
+        display: block;
+        margin-bottom: 24px;
+    }
+}
+
+.top {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 48px;
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+    }
+}
+
+.descr {
+    margin-bottom: 32px;
+
+    @media (max-width: $xxl) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    @media (max-width: $xl) {
+        margin-bottom: 24px;
+    }
+}
+
+.content {
+    width: 40%;
+
+    @media (max-width: $xxl) {
+        width: 50%;
+    }
+
+    @media (max-width: $xl) {
+        width: 100%;
+    }
+}
+
+.notice {
+    padding-left: 48px;
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-13px);
+        background: url("/img/home/notice-brown.svg") no-repeat;
+        background-size: contain;
+        width: 27px;
+        height: 27px;
+    }
+}
+
+.caption {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    @media (max-width: $md) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.swiper {
+    @media (max-width: $xl) {
+        max-width: unset;
+        padding-right: 0;
+
+        & .slide {
+            width: 240px;
+            margin-right: 20px;
+        }
+    }
+}
+
+.swiperConntainer {
+    width: 83.3%;
+    display: flex;
+    margin-left: auto;
+    @media (max-width: $xl) {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 0;
+
+        & > div {
+            margin-left: calc((100% - $md + 30px) / 2);
+            padding-right: 10px;
+        }
+    }
+    @media (max-width: $md) {
+        & > div {
+            margin-left: 0;
+        }
+    }
+}
+
+.card {
+    cursor: pointer;
+}
+
+.imgBlock {
+    width: 278px;
+    height: 278px;
+
+    @media (max-width: $xxl) {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+.text {
+    margin-top: 16px;
+}

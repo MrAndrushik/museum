@@ -1,0 +1,91 @@
+@import "../const";
+
+.exhibit {
+    background-color: $green;
+    position: relative;
+    color: #fff;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: $yellow;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-height: 660px;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media (max-width: $xl) {
+        max-height: 400px;
+    }
+
+    @media (max-width: $md) {
+        max-height: 760px;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.imgBlock1,
+.imgBlock2 {
+    position: relative;
+}
+
+.imgBlock1:nth-child(2n-1),
+.imgBlock2:nth-child(2n) {
+    min-width: 278px;
+    min-height: 208px;
+
+    @media (max-width: $xxl) {
+        min-width: 240px;
+        min-height: 180px;
+    }
+
+    @media (max-width: $xl) {
+        min-width: 160px;
+        min-height: 120px;
+    }
+}
+
+.imgBlock1:nth-child(2n),
+.imgBlock2:nth-child(2n - 1) {
+    min-width: 278px;
+    min-height: 416px;
+
+    @media (max-width: $xxl) {
+        min-width: 240px;
+        min-height: 360px;
+    }
+
+    @media (max-width: $xl) {
+        min-width: 160px;
+        min-height: 240px;
+    }
+}
+
+.title {
+    margin-bottom: 48px;
+}
+
+.tags {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.text {
+    color: #fff;
+    text-transform: uppercase;
+}

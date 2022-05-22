@@ -1,0 +1,28 @@
+{
+    "cards": [
+        {
+            "imgSrc": "/img/home/types-1.jpg",
+            "color": "#131722",
+            "background": "#F4B63E",
+            "descr": "Корпоративы, дни рождения,  детские праздники, вечеринки"
+        },
+        {
+            "imgSrc": "/img/home/types-2.jpg",
+            "color": "#fff",
+            "background": "#082E25",
+            "descr": "Квесты и викторины, как в индивидуальном порядке, так и командные соревнования"
+        },
+        {
+            "imgSrc": "/img/home/types-3.jpg",
+            "color": "#fff",
+            "background": "#A2543D",
+            "descr": "Экскурсии, лекции, встречи, вечера и дружеские посиделки"
+        },
+        {
+            "imgSrc": "/img/home/types-4.jpg",
+            "color": "#fff",
+            "background": "#131722",
+            "descr": "Публичные чтения, мастер-классы и занятия "
+        }
+    ]
+}

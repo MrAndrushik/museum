@@ -1,0 +1,24 @@
+@import "../const";
+
+.next,
+.prev {
+    width: 48px;
+    height: 48px;
+    transition: $transition;
+
+    & rect {
+        transition: $transition;
+    }
+
+    &:hover rect {
+        fill: $yellow;
+    }
+
+    & .disabled {
+        opacity: 0.5;
+    }
+}
+
+.prev {
+    transform: rotate(180deg);
+}

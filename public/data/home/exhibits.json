@@ -1,0 +1,14 @@
+{
+    "tags": ["Разное", "Книги", "Плакаты", "Игрушки", "Предметы быта"],
+
+    "cards": [
+        { "imgSrc": "/img/home/exhibits-1.jpg", "category": "Разное" },
+        { "imgSrc": "/img/home/exhibits-2.jpg", "category": "Разное" },
+        { "imgSrc": "/img/home/exhibits-3.jpg", "category": "Разное" },
+        { "imgSrc": "/img/home/exhibits-4.jpg", "category": "Разное" },
+        { "imgSrc": "/img/home/exhibits-5.jpg", "category": "Разное" },
+        { "imgSrc": "/img/home/exhibits-6.jpg", "category": "Разное" },
+        { "imgSrc": "/img/home/exhibits-7.jpg", "category": "Разное" },
+        { "imgSrc": "/img/home/exhibits-8.jpg", "category": "Разное" }
+    ]
+}

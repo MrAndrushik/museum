@@ -1,0 +1,140 @@
+@import "../const";
+
+.hero {
+    height: calc(100vh - 64px);
+    background: $green;
+    padding: 0;
+    display: flex;
+}
+
+.aside {
+    padding: 80px 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    gap: 140px;
+    background: $yellow;
+
+    @media (max-width: $xxl) {
+        padding: 80px 15px;
+    }
+
+    @media (max-width: $xl) {
+        width: 10%;
+    }
+}
+
+.asideImg {
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.container {
+    padding-top: 80px;
+    width: 65.5%;
+    margin-left: 6.25%;
+}
+
+.top {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 80px;
+    justify-content: space-between;
+    @media (max-width: $xl) {
+        margin-bottom: 0;
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 96px;
+    text-transform: uppercase;
+    max-width: 880px;
+    color: #fff;
+    z-index: 1;
+
+    @media (max-width: $xxl) {
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    @media (max-width: $xl) {
+        margin-bottom: 32px;
+    }
+
+    @media (max-width: $md) {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+.span {
+    display: flex;
+    margin-left: 26%;
+    margin-right: 0;
+
+    @media (max-width: $xl) {
+        margin-left: 0;
+    }
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 40px;
+
+    @media (max-width: $xl) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+.img1 {
+    align-self: stretch;
+    margin-left: 60px;
+
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.img2 {
+    min-width: 400px;
+
+    @media (max-width: $xxl) {
+        min-width: 300px;
+    }
+
+    @media (max-width: $xl) {
+        max-width: 260px;
+        min-width: unset;
+    }
+}
+
+.img3 {
+    max-width: 270px;
+    min-width: 150px;
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.description {
+    z-index: 1;
+    max-width: 466px;
+    color: #fff;
+
+    @media (max-width: $xxl) {
+        max-width: 404px;
+    }
+
+    @media (max-width: $xl) {
+        max-width: unset;
+    }
+}

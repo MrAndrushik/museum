@@ -1,0 +1,91 @@
+@import "../const";
+
+.history {
+    position: relative;
+    color: $black;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: $green;
+        width: 12.5%;
+        height: 100%;
+
+        @media (max-width: $xl) {
+            display: none;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.title {
+    margin-bottom: 32px;
+
+    @media (max-width: $xxl) {
+        margin-bottom: 24px;
+    }
+}
+
+.swiper {
+    overflow: auto;
+    @media (max-width: $xl) {
+        max-width: unset;
+        padding-right: 0;
+
+        & .slide {
+            width: 328px;
+        }
+    }
+
+    @media (max-width: $md) {
+        & .slide {
+            width: 300px;
+        }
+    }
+}
+
+.swiperConntainer {
+    width: 83.3%;
+    display: flex;
+    margin-left: auto;
+    @media (max-width: $xl) {
+        width: 100%;
+        margin-left: 0;
+        padding-right: 0;
+
+        & > div {
+            margin-left: calc((100% - $md + 30px) / 2);
+            padding-right: 10px;
+        }
+    }
+
+    @media (max-width: $md) {
+        & > div {
+            margin-left: 0px;
+        }
+    }
+}
+
+.description {
+    margin-bottom: 24px;
+    max-width: 474px;
+}
+
+.text {
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 26px;
+    padding-bottom: 30px;
+
+    @media (max-width: $xxl) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
