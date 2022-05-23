@@ -1,87 +1,87 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { Navigation, Scrollbar } from "swiper";
+import { EffectCards } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/scrollbar";
-import styles from "../styles/modules/PreviewBlock.module.scss";
-import SlideBtn from "./SlideBtn";
+import styles from "../styles/modules/USSRCorporate.module.scss";
 
-const PreviewBlock = ({ obj }) => {
-    const [activeCard, setActiveCard] = useState(0);
-
+const USSRCorporate = ({ obj }) => {
+    const { cards } = obj;
     return (
-        <section className={styles.previewBlock}>
+        <section className={styles.corporate}>
             <div className={`${styles.container} container`}>
-                <Link href={obj.link}>
-                    <a className={styles.link}>{obj.linkText}</a>
+                <Link href="/">
+                    <a className={styles.link}>Подробнее</a>
                 </Link>
                 <div className={styles.flex}>
                     <div className="container">
                         <div className={styles.top}>
                             <div className={styles.content}>
                                 <h2 className={`${styles.title} stn-title`}>
-                                    {obj.title}
+                                    Организуем мероприятия в стиле СССР
                                 </h2>
-                                <div className={styles.imgMobile}>
-                                    <Image
-                                        src={`${obj.cards[activeCard].imgSrc}`}
-                                        alt="full-screen"
-                                        width={710}
-                                        height={400}
-                                    />
-                                </div>
+                                <div className={styles.imgMobile}></div>
                                 <p className={`${styles.descr} stn-text`}>
-                                    {obj.descr}
+                                    Вечеринки, корпоративы, дни рождения,
+                                    экскурсии и публичные вуступления, квесты
+                                    и викторины, командные соревнования
                                 </p>
-                                {obj.notice && (
-                                    <p className={styles.notice}>
-                                        {obj.notice}
-                                    </p>
-                                )}
+                                <p className={styles.notice}>
+                                    на нашей площадке с бесплатным посещением
+                                    музея
+                                </p>
+                                <p className={styles.notice}>
+                                    на любой другой локации
+                                </p>
                             </div>
                             <div className={styles.imgDesc}>
-                                <Image
-                                    src={`${obj.cards[activeCard].imgSrc}`}
-                                    alt="full-screen"
-                                    width={710}
-                                    height={400}
-                                />
+                                <Swiper
+                                    effect={"cards"}
+                                    grabCursor={true}
+                                    modules={[EffectCards]}
+                                    className={styles.cardSwiper}
+                                >
+                                    <SwiperSlide className={styles.cardSlide}>
+                                        Slide 1
+                                    </SwiperSlide>
+                                    <SwiperSlide className={styles.cardSlide}>
+                                        Slide 2
+                                    </SwiperSlide>
+                                    <SwiperSlide className={styles.cardSlide}>
+                                        Slide 3
+                                    </SwiperSlide>
+                                    <SwiperSlide className={styles.cardSlide}>
+                                        Slide 4
+                                    </SwiperSlide>
+                                </Swiper>
                             </div>
                         </div>
                         <div className={styles.bottom}>
-                            <h3 className={styles.caption}>
-                                {obj.galleryCaption}
-                            </h3>
+                            <h3 className={styles.caption}>Интерактивы СССР</h3>
                         </div>
                     </div>
                     <div className={`${styles.swiper}`}>
                         <div className={styles.swiperConntainer}>
                             <Swiper
                                 className={`${styles.swiper} container`}
-                                modules={[Navigation, Scrollbar]}
                                 breakpoints={{
                                     1228: {
-                                        slidesPerView: 4,
+                                        slidesPerView: 3,
                                         spaceBetween: 24,
                                     },
                                 }}
+                                grabCursor={true}
                                 scrollbar
                                 slidesPerView="auto"
                                 spaceBetween={24}
                             >
-                                {obj.cards.map((card, index) => (
+                                {cards.map((card, index) => (
                                     <SwiperSlide
                                         className={styles.slide}
                                         key={index}
                                     >
-                                        <div
-                                            onClick={() => setActiveCard(index)}
-                                            className={styles.card}
-                                        >
+                                        <div className={styles.card}>
                                             <div
                                                 style={{
                                                     background: `url(${card.imgSrc}) no-repeat center center`,
@@ -97,17 +97,15 @@ const PreviewBlock = ({ obj }) => {
                                         </div>
                                     </SwiperSlide>
                                 ))}
-                                <SlideBtn type="prev" />
-                                <SlideBtn type="next" />
                             </Swiper>
                         </div>
                     </div>
                 </div>
             </div>
             <div className={`container`}>
-                <Link href={obj.link}>
+                <Link href="/">
                     <a className={`${styles.link} ${styles.mobile}`}>
-                        {obj.linkText}
+                        Подробнее
                     </a>
                 </Link>
             </div>
@@ -115,4 +113,4 @@ const PreviewBlock = ({ obj }) => {
     );
 };
 
-export default PreviewBlock;
+export default USSRCorporate;

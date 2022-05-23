@@ -37,7 +37,7 @@
     overflow: auto;
     @media (max-width: $xl) {
         max-width: unset;
-        padding-right: 0;
+        padding: 0;
 
         & .slide {
             width: 328px;
@@ -58,16 +58,16 @@
     @media (max-width: $xl) {
         width: 100%;
         margin-left: 0;
-        padding-right: 0;
 
         & > div {
-            margin-left: calc((100% - $md + 30px) / 2);
+            margin-left: calc((100% - $md + 20px) / 2);
             padding-right: 10px;
         }
     }
 
     @media (max-width: $md) {
         & > div {
+            padding: 0 10px;
             margin-left: 0px;
         }
     }

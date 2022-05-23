@@ -1,7 +1,8 @@
 @import "../const";
 
-.previewBlock {
-    color: $black;
+.corporate {
+    color: #fff;
+    background-color: $green;
     position: relative;
 }
 
@@ -42,7 +43,7 @@
     top: 30%;
     width: 180px;
     height: 180px;
-    background-color: $light-green;
+    background-color: $yellow;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -51,7 +52,7 @@
     line-height: 26px;
     text-transform: uppercase;
     cursor: pointer;
-    color: #fff;
+    color: $black;
     font-weight: 500;
 
     @media (max-width: $xxl) {
@@ -97,6 +98,7 @@
 }
 
 .descr {
+    color: #fff;
     margin-bottom: 32px;
 
     @media (max-width: $xxl) {
@@ -110,7 +112,7 @@
 }
 
 .content {
-    width: 40%;
+    max-width: 442px;
 
     @media (max-width: $xxl) {
         width: 50%;
@@ -122,23 +124,13 @@
 }
 
 .notice {
-    padding-left: 48px;
     position: relative;
+    font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+    color: #f4b63e;
     text-transform: uppercase;
-
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-13px);
-        background: url("/img/home/notice-brown.svg") no-repeat;
-        background-size: contain;
-        width: 27px;
-        height: 27px;
-    }
+    margin-bottom: 16px;
 }
 
 .caption {
@@ -155,14 +147,12 @@
 
 .swiper {
     overflow: auto;
-    height: 100%;
-    height: fit-content;
     @media (max-width: $xl) {
         max-width: unset;
         height: unset;
 
         & .slide {
-            width: 240px;
+            width: 328px;
         }
     }
 }
@@ -171,6 +161,7 @@
     width: 100%;
     display: flex;
     margin-left: auto;
+
     @media (max-width: $xl) {
         width: 100%;
         margin-left: 0;
@@ -193,16 +184,48 @@
 }
 
 .imgBlock {
-    width: 278px;
-    height: 278px;
+    width: 378px;
+    height: 280px;
 
     @media (max-width: $xxl) {
-        width: 240px;
+        width: 328px;
         height: 240px;
     }
 }
 
 .text {
+    color: #fff;
     margin-top: 16px;
     padding-bottom: 40px;
+}
+
+.cardSwiper {
+    width: 240px;
+    height: 320px;
+}
+
+.cardSlide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cardSlide:nth-child(1n) {
+    background-color: rgb(206, 17, 17);
+}
+
+.cardSlide:nth-child(2n) {
+    background-color: rgb(0, 140, 255);
+}
+
+.cardSlide:nth-child(3n) {
+    background-color: rgb(10, 184, 111);
+}
+
+.cardSlide:nth-child(4n) {
+    background-color: rgb(211, 122, 7);
 }

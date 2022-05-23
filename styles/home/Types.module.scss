@@ -39,7 +39,7 @@
 .swiper {
     @media (max-width: $xl) {
         max-width: 100%;
-        margin-left: calc((100% - $md + 30px) / 2);
+        margin-left: calc((100% - $md + 20px) / 2);
         padding-right: 10px;
         & .slide {
             width: 232px;
@@ -47,7 +47,8 @@
     }
 
     @media (max-width: $md) {
-        margin-left: 10px;
+        margin-left: 0px;
+        padding: 0 10px;
     }
 }
 

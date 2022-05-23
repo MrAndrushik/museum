@@ -1,5 +1,11 @@
 @import "../const";
 
+.container {
+    @media (max-width: $md) {
+        padding: 0;
+    }
+}
+
 .exhibit {
     background-color: $green;
     position: relative;
@@ -13,6 +19,10 @@
         left: 0;
         top: 0;
         background-color: $yellow;
+
+        @media (max-width: $xl) {
+            display: none;
+        }
     }
 }
 
@@ -25,10 +35,12 @@
 
     @media (max-width: $xl) {
         max-height: 400px;
+        gap: 12px;
     }
 
     @media (max-width: $md) {
         max-height: 760px;
+        padding: 0 10px;
     }
 }
 
@@ -49,13 +61,8 @@
     min-height: 208px;
 
     @media (max-width: $xxl) {
-        min-width: 240px;
+        min-width: 230px;
         min-height: 180px;
-    }
-
-    @media (max-width: $xl) {
-        min-width: 160px;
-        min-height: 120px;
     }
 }
 
@@ -65,27 +72,59 @@
     min-height: 416px;
 
     @media (max-width: $xxl) {
-        min-width: 240px;
+        min-width: 230px;
         min-height: 360px;
     }
+}
 
+.imgBlock1:nth-child(2n),
+.imgBlock2:nth-child(2n) {
     @media (max-width: $xl) {
         min-width: 160px;
         min-height: 240px;
     }
 }
 
-.title {
-    margin-bottom: 48px;
+.imgBlock1:nth-child(2n-1),
+.imgBlock2:nth-child(2n-1) {
+    @media (max-width: $xl) {
+        min-width: 160px;
+        min-height: 120px;
+    }
 }
 
+.title {
+    margin-bottom: 48px;
+    @media (max-width: $md) {
+        padding-left: 10px;
+    }
+}
+
+.tagContainer {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    overflow: auto;
+}
 .tags {
+    position: absolute;
     display: flex;
     gap: 32px;
-    margin-bottom: 48px;
+    top: 0;
+    padding-right: 15px;
+
+    @media (max-width: $md) {
+        left: 10px;
+    }
 }
 
 .text {
+    cursor: pointer;
     color: #fff;
     text-transform: uppercase;
+    white-space: nowrap;
 }

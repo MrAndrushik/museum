@@ -1,0 +1,104 @@
+@import "../const";
+
+.contacts {
+    background-color: $black;
+    color: #fff;
+
+    @media (max-width: $xxl) {
+        padding-bottom: 48px;
+    }
+
+    @media (max-width: $xl) {
+        padding-bottom: 0;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: $xxl) {
+        width: 100%;
+    }
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+    }
+}
+
+.column1 {
+    max-width: 446px;
+
+    @media (max-width: $xl) {
+        max-width: unset;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 32px;
+    @media (max-width: $xl) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+.title {
+    margin-bottom: 44px;
+}
+
+.graphic {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.timeBlock {
+    display: flex;
+    gap: 56px;
+}
+
+.time {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & > li > a {
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        padding: 2px 0px 2px 44px;
+    }
+}
+
+.tel {
+    background: url("/img/phone-white.svg") no-repeat left center;
+    background-size: contain;
+}
+
+.email {
+    background: url("/img/mail.svg") no-repeat left center;
+    background-size: contain;
+}
+
+.geo {
+    background: url("/img/geo.svg") no-repeat 5px center;
+    background-size: contain;
+}

@@ -7,7 +7,7 @@ const Header = () => {
             <div className="container header__container">
                 <Image
                     className="header__logo"
-                    src="/img/logo.svg"
+                    src="/img/logo-dark.svg"
                     alt="МУЗЕЙ СОВЕТСКОГО ДЕТСВА"
                     width={118}
                     height={64}

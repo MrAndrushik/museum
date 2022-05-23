@@ -6,6 +6,9 @@ import Memories from "../components/home/Memories";
 import Types from "../components/home/Types";
 import PreviewBlock from "../components/PreviewBlock";
 import Exhibits from "../components/home/Exhibits";
+import Contacts from "../components/home/Contacts";
+import USSRCorporate from "../components/USSRCorporate";
+import Space from "../components/Space";
 
 // DATA
 import HistoryData from "../public/data/home/history.json";
@@ -14,6 +17,8 @@ import MemoriesData from "../public/data/home/memories.json";
 import TypesData from "../public/data/home/types.json";
 import MuseumDepartureData from "../public/data/home/museum-departure.json";
 import ExhibitsData from "../public/data/home/exhibits.json";
+import USSRCorporateData from "../public/data/USSRcorporate.json";
+import SpaceData from "../public/data/home/space.json";
 
 export default function Home() {
     return (
@@ -32,7 +37,10 @@ export default function Home() {
             <Memories tags={MemoriesData["tags"]} />
             <Types obj={TypesData["cards"]} />
             <PreviewBlock obj={MuseumDepartureData} />
+            <USSRCorporate obj={USSRCorporateData} />
+            <Space obj={SpaceData} />
             <Exhibits obj={ExhibitsData} />
+            <Contacts />
         </>
     );
 }

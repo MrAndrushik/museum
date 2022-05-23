@@ -10,14 +10,20 @@ const History = ({ obj }) => {
     return (
         <section className={styles.history}>
             <div className={`container`}>
-                <div className={`${styles.content} content`}>
-                    <h2 className={`${styles.title} stn-title`}>{title}</h2>
-                    {descr && (
-                        <p className={`${styles.description} stn-text`}>
-                            {descr}
-                        </p>
-                    )}
-                </div>
+                {title && descr && (
+                    <div className={`${styles.content} content`}>
+                        {title && (
+                            <h2 className={`${styles.title} stn-title`}>
+                                {title}
+                            </h2>
+                        )}
+                        {descr && (
+                            <p className={`${styles.description} stn-text`}>
+                                {descr}
+                            </p>
+                        )}
+                    </div>
+                )}
             </div>
             <div className={`${styles.swiper} container`}>
                 <div className={styles.swiperConntainer}>

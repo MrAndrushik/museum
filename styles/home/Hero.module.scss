@@ -1,10 +1,12 @@
 @import "../const";
 
 .hero {
-    height: calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
     background: $green;
     padding: 0;
     display: flex;
+    position: relative;
+    overflow: hidden;
 }
 
 .aside {
@@ -13,7 +15,6 @@
     display: flex;
     flex-direction: column;
     width: 20%;
-    height: 100%;
     gap: 140px;
     background: $yellow;
 
@@ -23,6 +24,32 @@
 
     @media (max-width: $xl) {
         width: 10%;
+    }
+}
+
+.mobileImg1,
+.mobileImg2 {
+    display: none;
+
+    @media (max-width: $xl) {
+        display: block;
+        position: absolute;
+        width: 160px;
+        height: 120px;
+    }
+}
+
+.mobileImg1 {
+    left: 20px;
+    top: 30px;
+}
+
+.mobileImg2 {
+    right: 40px;
+    top: 50px;
+
+    @media (max-width: $md) {
+        right: -50px;
     }
 }
 
@@ -36,6 +63,11 @@
     padding-top: 80px;
     width: 65.5%;
     margin-left: 6.25%;
+
+    @media (max-width: $xl) {
+        padding-top: 180px;
+        padding-bottom: 80px;
+    }
 }
 
 .top {

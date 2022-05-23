@@ -6,15 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/scrollbar";
-import styles from "../styles/modules/PreviewBlock.module.scss";
+
+import styles from "../styles/modules/Space.module.scss";
 import SlideBtn from "./SlideBtn";
 
-const PreviewBlock = ({ obj }) => {
-    const [activeCard, setActiveCard] = useState(0);
-
+const Space = ({ obj }) => {
     return (
-        <section className={styles.previewBlock}>
+        <section className={styles.space}>
             <div className={`${styles.container} container`}>
                 <Link href={obj.link}>
                     <a className={styles.link}>{obj.linkText}</a>
@@ -26,14 +24,7 @@ const PreviewBlock = ({ obj }) => {
                                 <h2 className={`${styles.title} stn-title`}>
                                     {obj.title}
                                 </h2>
-                                <div className={styles.imgMobile}>
-                                    <Image
-                                        src={`${obj.cards[activeCard].imgSrc}`}
-                                        alt="full-screen"
-                                        width={710}
-                                        height={400}
-                                    />
-                                </div>
+
                                 <p className={`${styles.descr} stn-text`}>
                                     {obj.descr}
                                 </p>
@@ -43,34 +34,29 @@ const PreviewBlock = ({ obj }) => {
                                     </p>
                                 )}
                             </div>
-                            <div className={styles.imgDesc}>
-                                <Image
-                                    src={`${obj.cards[activeCard].imgSrc}`}
-                                    alt="full-screen"
-                                    width={710}
-                                    height={400}
-                                />
-                            </div>
                         </div>
-                        <div className={styles.bottom}>
-                            <h3 className={styles.caption}>
-                                {obj.galleryCaption}
-                            </h3>
-                        </div>
+                        <ul className={styles.bottom}>
+                            {obj.info.map((item, index) => (
+                                <li className={styles.infoBlock} key={index}>
+                                    <h3 className={styles.value}>
+                                        {item.value}{" "}
+                                        <span className={styles.unit}>
+                                            {item.unit}
+                                        </span>
+                                    </h3>
+                                    <p className={`${styles.info} stn-text`}>
+                                        {item.descr}
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                     <div className={`${styles.swiper}`}>
                         <div className={styles.swiperConntainer}>
                             <Swiper
                                 className={`${styles.swiper} container`}
                                 modules={[Navigation, Scrollbar]}
-                                breakpoints={{
-                                    1228: {
-                                        slidesPerView: 4,
-                                        spaceBetween: 24,
-                                    },
-                                }}
                                 scrollbar
-                                slidesPerView="auto"
                                 spaceBetween={24}
                             >
                                 {obj.cards.map((card, index) => (
@@ -78,10 +64,7 @@ const PreviewBlock = ({ obj }) => {
                                         className={styles.slide}
                                         key={index}
                                     >
-                                        <div
-                                            onClick={() => setActiveCard(index)}
-                                            className={styles.card}
-                                        >
+                                        {/* <div className={styles.card}>
                                             <div
                                                 style={{
                                                     background: `url(${card.imgSrc}) no-repeat center center`,
@@ -89,12 +72,8 @@ const PreviewBlock = ({ obj }) => {
                                                 }}
                                                 className={styles.imgBlock}
                                             ></div>
-                                            <p
-                                                className={`${styles.text} stn-text`}
-                                            >
-                                                {card.text}
-                                            </p>
-                                        </div>
+                                        </div> */}
+                                        <img src={card.imgSrc} alt="gallery" />
                                     </SwiperSlide>
                                 ))}
                                 <SlideBtn type="prev" />
@@ -115,4 +94,4 @@ const PreviewBlock = ({ obj }) => {
     );
 };
 
-export default PreviewBlock;
+export default Space;

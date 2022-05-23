@@ -7,18 +7,23 @@ const Exhibits = ({ obj }) => {
     const [activeCategory, setActiveCategory] = useState("Разное");
     return (
         <section className={styles.exhibit}>
-            <div className={`container`}>
+            <div className={`${styles.container} container`}>
                 <div className={`${styles.content} content`}>
                     <h2 className={`${styles.title} stn-title`}>
                         Наши экспонаты
                     </h2>
-                    <ul className={styles.tags}>
-                        {tags.map((tag) => (
-                            <li className={`${styles.text} stn-text`} key={tag}>
-                                {tag}
-                            </li>
-                        ))}
-                    </ul>
+                    <div className={`${styles.tagContainer} container`}>
+                        <ul className={styles.tags}>
+                            {tags.map((tag) => (
+                                <li
+                                    className={`${styles.text} stn-text`}
+                                    key={tag}
+                                >
+                                    {tag}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                     <div className={styles.wrapper}>
                         {cards.map(
                             (card, index) =>

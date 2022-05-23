@@ -28,6 +28,7 @@ p {
 body {
     font-weight: 400;
     font-family: "Mail Sans Roman", sans-serif;
+    overflow-x: hidden;
 }
 
 ul,
@@ -55,7 +56,8 @@ a {
 }
 
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 0;
+    height: 0;
     background: $black;
 }
 
@@ -269,4 +271,133 @@ a {
 
 .swipper-scrollbar {
     background: $brown !important;
+}
+
+.footer {
+    background: $black;
+    padding-top: 32px;
+    border-top: 0.5px solid #313748;
+    padding-bottom: 80px;
+
+    @media (max-width: $xl) {
+        border-top: 0;
+    }
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $xxl) {
+        align-items: flex-start;
+    }
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        gap: 24px;
+    }
+}
+
+.footer__nav {
+    margin: auto 0 auto 44px;
+
+    @media (max-width: $xxl) {
+        margin: 0;
+        padding-top: 21px;
+    }
+
+    @media (max-width: $xl) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-top: 0.5px solid #313748;
+        border-bottom: 0.5px solid #313748;
+        width: 100%;
+    }
+}
+
+.footer__list {
+    display: flex;
+    gap: 40px;
+    @media (max-width: $xxl) {
+        gap: 32px;
+    }
+    @media (max-width: $xl) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.footer__item {
+    align-items: center;
+    display: flex;
+
+    @media (max-width: $xl) {
+        display: block;
+        text-align: center;
+    }
+}
+
+.footer__item--last {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer__link {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    @media (max-width: $xxl) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+.footer__privacy {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.footer__tickets {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 64px;
+    background: $yellow;
+    margin-left: auto;
+    margin-bottom: 12px;
+
+    @media (max-width: $xl) {
+        margin: 0 auto 32px auto;
+    }
+}
+
+.footer__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+
+    @media (max-width: $xxl) {
+        flex-direction: column;
+        text-align: right;
+        gap: 12px;
+    }
+
+    @media (max-width: $xl) {
+        text-align: center;
+    }
+}
+
+.swiper-scrollbar {
+    display: none !important;
+    @media (max-width: $xl) {
+        display: block !important;
+    }
 }

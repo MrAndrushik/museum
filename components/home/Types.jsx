@@ -13,14 +13,12 @@ const Types = ({ obj }) => {
                 </h2>
             </div>
             <Swiper
+                slidesPerView={"auto"}
+                spaceBetween={24}
                 breakpoints={{
                     1228: {
                         slidesPerView: 4,
                         spaceBetween: 89,
-                    },
-                    350: {
-                        slidesPerView: "auto",
-                        spaceBetween: 24,
                     },
                 }}
                 className={`${styles.swiper} container  `}

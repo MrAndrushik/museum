@@ -1,0 +1,28 @@
+{
+    "cards": [
+        {
+            "imgSrc": "/img/corporate/ussr-1.jpg",
+            "text": "Квест советской эпохи"
+        },
+        {
+            "imgSrc": "/img/corporate/ussr-2.jpg",
+            "text": "Вечеринка в стиле СССР"
+        },
+        {
+            "imgSrc": "/img/corporate/ussr-3.jpg",
+            "text": "Советское питание"
+        },
+        {
+            "imgSrc": "/img/corporate/ussr-1.jpg",
+            "text": "Квест советской эпохи"
+        },
+        {
+            "imgSrc": "/img/corporate/ussr-2.jpg",
+            "text": "Вечеринка в стиле СССР"
+        },
+        {
+            "imgSrc": "/img/corporate/ussr-3.jpg",
+            "text": "Советское питание"
+        }
+    ]
+}
