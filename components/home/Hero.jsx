@@ -28,7 +28,7 @@ const Hero = () => {
                 <div className={styles.top}>
                     <h1 className={styles.title}>
                         <span>Музей</span>
-                        <span className={styles.span}>Советского Детсва</span>
+                        <span className={styles.span}>Советского Детства</span>
                     </h1>
                     <div className={styles.img1}>
                         <Image
