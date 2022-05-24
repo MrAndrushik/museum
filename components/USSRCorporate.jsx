@@ -7,7 +7,7 @@ import "swiper/css";
 import styles from "../styles/modules/USSRCorporate.module.scss";
 
 const USSRCorporate = ({ obj }) => {
-    const { cards } = obj;
+    const { cards, slider } = obj;
     return (
         <section className={styles.corporate}>
             <div className={`${styles.container} container`}>
@@ -35,27 +35,27 @@ const USSRCorporate = ({ obj }) => {
                                     на любой другой локации
                                 </p>
                             </div>
-                            <div className={styles.imgDesc}>
-                                <Swiper
-                                    effect={"cards"}
-                                    grabCursor={true}
-                                    modules={[EffectCards]}
-                                    className={styles.cardSwiper}
-                                >
-                                    <SwiperSlide className={styles.cardSlide}>
-                                        Slide 1
+
+                            <Swiper
+                                effect={"cards"}
+                                grabCursor={true}
+                                modules={[EffectCards]}
+                                className={styles.cardSwiper}
+                            >
+                                {slider.map((item, index) => (
+                                    <SwiperSlide
+                                        key={index}
+                                        className={styles.cardSlide}
+                                    >
+                                        <Image
+                                            objectFit="cover"
+                                            layout="fill"
+                                            alt="card"
+                                            src={item}
+                                        />
                                     </SwiperSlide>
-                                    <SwiperSlide className={styles.cardSlide}>
-                                        Slide 2
-                                    </SwiperSlide>
-                                    <SwiperSlide className={styles.cardSlide}>
-                                        Slide 3
-                                    </SwiperSlide>
-                                    <SwiperSlide className={styles.cardSlide}>
-                                        Slide 4
-                                    </SwiperSlide>
-                                </Swiper>
-                            </div>
+                                ))}
+                            </Swiper>
                         </div>
                         <div className={styles.bottom}>
                             <h3 className={styles.caption}>Интерактивы СССР</h3>
@@ -82,13 +82,14 @@ const USSRCorporate = ({ obj }) => {
                                         key={index}
                                     >
                                         <div className={styles.card}>
-                                            <div
-                                                style={{
-                                                    background: `url(${card.imgSrc}) no-repeat center center`,
-                                                    backgroundSize: "cover",
-                                                }}
-                                                className={styles.imgBlock}
-                                            ></div>
+                                            <div className={styles.imgBlock}>
+                                                <Image
+                                                    objectFit="cover"
+                                                    layout="fill"
+                                                    alt="card"
+                                                    src={card.imgSrc}
+                                                />
+                                            </div>
                                             <p
                                                 className={`${styles.text} stn-text`}
                                             >

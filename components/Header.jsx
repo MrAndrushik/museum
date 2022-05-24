@@ -1,7 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
+import useModal from "../hooks/useModal";
 
 const Header = () => {
+    const { onToggle, isOpen, onClose } = useModal();
+
+    const onBurgerClick = () => {
+        document.querySelector("html").classList.toggle("hidden");
+        onToggle();
+    };
+
+    const handleLinks = () => {
+        onClose();
+        document.querySelector("html").classList.remove("hidden");
+    };
+
+    const links = [
+        {
+            title: "Мероприятия СССР",
+            href: "/",
+        },
+        {
+            title: "Музей на выезд",
+            href: "/",
+        },
+        {
+            title: "Праздник в музее",
+            href: "/",
+        },
+        {
+            title: "О нас",
+            href: "/",
+        },
+        {
+            title: "Контакты",
+            href: "/",
+        },
+    ];
+
     return (
         <header className="header">
             <div className="container header__container">
@@ -12,33 +48,20 @@ const Header = () => {
                     width={118}
                     height={64}
                 />
-                <nav className="nav">
+                <nav className={isOpen ? "nav nav--open" : "nav"}>
                     <ul className="nav__list">
-                        <li className="nav__item">
-                            <Link href="/">
-                                <a className="nav__link">Мероприятия СССР</a>
-                            </Link>
-                        </li>
-                        <li className="nav__item">
-                            <Link href="/">
-                                <a className="nav__link">Музей на выезд</a>
-                            </Link>
-                        </li>
-                        <li className="nav__item">
-                            <Link href="/">
-                                <a className="nav__link">Праздник в музее</a>
-                            </Link>
-                        </li>
-                        <li className="nav__item">
-                            <Link href="/">
-                                <a className="nav__link">О нас</a>
-                            </Link>
-                        </li>
-                        <li className="nav__item">
-                            <Link href="/">
-                                <a className="nav__link">Контакты</a>
-                            </Link>
-                        </li>
+                        {links.map((link, index) => (
+                            <li key={index} className="nav__item">
+                                <Link href={link.href}>
+                                    <a
+                                        onClick={() => handleLinks()}
+                                        className="nav__link"
+                                    >
+                                        {link.title}
+                                    </a>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
                 <div className="header__buttons">
@@ -70,7 +93,10 @@ const Header = () => {
                         </svg>
                         <span>Билеты</span>
                     </button>
-                    <button className="burger">
+                    <button
+                        className={isOpen ? "burger--open burger" : "burger"}
+                        onClick={() => onBurgerClick()}
+                    >
                         <div className="burger__line"></div>
                         <div className="burger__line"></div>
                         <div className="burger__line"></div>

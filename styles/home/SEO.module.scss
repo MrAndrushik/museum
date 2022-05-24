@@ -1,0 +1,71 @@
+@import "../const";
+
+.seo {
+    background-color: $green;
+    color: #fff;
+    position: relative;
+}
+
+.asideImg {
+    @media (max-width: $xxl) {
+        display: none;
+    }
+}
+
+.aside {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 80px 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+    gap: 80px;
+    background: $yellow;
+
+    @media (max-width: $xxl) {
+        padding: 80px 15px;
+        width: 10%;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: $xl) {
+        max-width: unset;
+        padding-left: 20%;
+        padding-right: 44px;
+    }
+
+    @media (max-width: $md) {
+        padding-right: 10px;
+        padding-left: 15%;
+    }
+}
+
+.block {
+    display: flex;
+    gap: 32px;
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+    }
+}
+
+.title {
+    margin-bottom: 32px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

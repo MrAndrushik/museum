@@ -1,0 +1,178 @@
+@import "../const";
+
+.previewBlock {
+    color: $black;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.title {
+    margin-bottom: 32px;
+
+    @media (max-width: $xxl) {
+        margin-bottom: 24px;
+    }
+}
+
+.link {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30%;
+    width: 180px;
+    height: 180px;
+    background-color: $light-green;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    transition: $transition;
+    text-align: center;
+
+    &:hover {
+        width: 160px;
+        height: 160px;
+        background-color: $dark-green;
+    }
+
+    @media (max-width: $xxl) {
+        width: 148px;
+        height: 148px;
+
+        &:hover {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.mobile {
+    display: none;
+
+    @media (max-width: $xl) {
+        display: flex;
+        text-align: center;
+        padding: 0 5px;
+    }
+}
+
+.imgBlock {
+    position: relative;
+    min-width: 378px;
+    min-height: 280px;
+
+    @media (max-width: $xxl) {
+        min-width: 328px;
+        min-height: 240px;
+    }
+}
+
+.wrapper {
+    @media (max-width: $xl) {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        > div {
+            width: 48%;
+        }
+    }
+
+    @media (max-width: $md) {
+        flex-direction: column;
+        > div {
+            width: 100%;
+        }
+    }
+}
+
+.content {
+    width: 83.3%;
+
+    @media (max-width: $xl) {
+        width: 100%;
+    }
+}
+
+.newsBlock {
+    position: relative;
+    display: flex;
+    gap: 32px;
+    padding: 16px 0;
+    border-top: 1px solid #313748;
+    cursor: pointer;
+
+    &:last-child {
+        border-bottom: 1px solid #313748;
+    }
+
+    &:hover .icon {
+        right: 0;
+        top: 0;
+        transform: scale(0.9);
+    }
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+        border: none;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.date {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.caption {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @media (max-width: $md) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.flex {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: $transition;
+
+    @media (max-width: $xl) {
+        top: 0;
+        right: 0;
+
+        & svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

@@ -9,6 +9,8 @@ import Exhibits from "../components/home/Exhibits";
 import Contacts from "../components/home/Contacts";
 import USSRCorporate from "../components/USSRCorporate";
 import Space from "../components/Space";
+import SEO from "../components/home/SEO";
+import News from "../components/News";
 
 // DATA
 import HistoryData from "../public/data/home/history.json";
@@ -19,6 +21,7 @@ import MuseumDepartureData from "../public/data/home/museum-departure.json";
 import ExhibitsData from "../public/data/home/exhibits.json";
 import USSRCorporateData from "../public/data/USSRcorporate.json";
 import SpaceData from "../public/data/home/space.json";
+import NewsData from "../public/data/news.json";
 
 export default function Home() {
     return (
@@ -40,6 +43,8 @@ export default function Home() {
             <USSRCorporate obj={USSRCorporateData} />
             <Space obj={SpaceData} />
             <Exhibits obj={ExhibitsData} />
+            <News obj={NewsData} />
+            <SEO />
             <Contacts />
         </>
     );

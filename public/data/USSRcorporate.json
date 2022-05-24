@@ -24,5 +24,11 @@
             "imgSrc": "/img/corporate/ussr-3.jpg",
             "text": "Советское питание"
         }
+    ],
+
+    "slider": [
+        "/img/corporate/slider-1.jpg",
+        "/img/corporate/slider-2.jpg",
+        "/img/corporate/slider-3.jpg"
     ]
 }

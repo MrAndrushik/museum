@@ -54,10 +54,22 @@
     cursor: pointer;
     color: $black;
     font-weight: 500;
+    transition: $transition;
+
+    &:hover {
+        width: 160px;
+        height: 160px;
+        background-color: $yellowDark;
+    }
 
     @media (max-width: $xxl) {
         width: 148px;
         height: 148px;
+
+        &:hover {
+            width: 120px;
+            height: 120px;
+        }
     }
 
     @media (max-width: $xl) {
@@ -171,13 +183,14 @@
     overflow: auto;
     height: 100%;
     height: fit-content;
+
+    & .slide {
+        min-height: 400px;
+    }
+
     @media (max-width: $xl) {
         max-width: unset;
         height: unset;
-
-        & .slide {
-            width: auto;
-        }
     }
 }
 

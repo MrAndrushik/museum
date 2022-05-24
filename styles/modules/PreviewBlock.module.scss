@@ -1,10 +1,5 @@
 @import "../const";
 
-.previewBlock {
-    color: $black;
-    position: relative;
-}
-
 .container {
     display: flex;
     justify-content: space-between;
@@ -53,10 +48,22 @@
     cursor: pointer;
     color: #fff;
     font-weight: 500;
+    transition: $transition;
+
+    &:hover {
+        width: 160px;
+        height: 160px;
+        background-color: $dark-green;
+    }
 
     @media (max-width: $xxl) {
         width: 148px;
         height: 148px;
+
+        &:hover {
+            width: 120px;
+            height: 120px;
+        }
     }
 
     @media (max-width: $xl) {
@@ -193,9 +200,9 @@
 }
 
 .imgBlock {
+    position: relative;
     width: 278px;
     height: 278px;
-
     @media (max-width: $xxl) {
         width: 240px;
         height: 240px;

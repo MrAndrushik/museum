@@ -83,12 +83,19 @@ const PreviewBlock = ({ obj }) => {
                                             className={styles.card}
                                         >
                                             <div
-                                                style={{
-                                                    background: `url(${card.imgSrc}) no-repeat center center`,
-                                                    backgroundSize: "cover",
-                                                }}
+                                                // style={{
+                                                //     background: `url(${card.imgSrc}) no-repeat center center`,
+                                                //     backgroundSize: "cover",
+                                                // }}
                                                 className={styles.imgBlock}
-                                            ></div>
+                                            >
+                                                <Image
+                                                    objectFit="cover"
+                                                    layout="fill"
+                                                    alt="card"
+                                                    src={card.imgSrc}
+                                                />
+                                            </div>
                                             <p
                                                 className={`${styles.text} stn-text`}
                                             >
@@ -97,8 +104,6 @@ const PreviewBlock = ({ obj }) => {
                                         </div>
                                     </SwiperSlide>
                                 ))}
-                                <SlideBtn type="prev" />
-                                <SlideBtn type="next" />
                             </Swiper>
                         </div>
                     </div>

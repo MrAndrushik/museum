@@ -14,11 +14,15 @@
     &::before {
         content: "";
         position: absolute;
-        width: 10%;
+        width: 15%;
         height: 100%;
         left: 0;
         top: 0;
         background-color: $yellow;
+
+        @media (max-width: $xxl) {
+            width: 10%;
+        }
 
         @media (max-width: $xl) {
             display: none;
@@ -48,6 +52,44 @@
     display: flex;
     flex-direction: column;
     margin-left: auto;
+}
+
+.imgBlock {
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.423);
+        z-index: 1;
+        opacity: 0;
+        transition: $transition;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        width: 30px;
+        height: 30px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-12px, -12px);
+        background: url("/img/zoom.svg") no-repeat center center;
+        background-size: contain;
+        z-index: 2;
+        transition: $transition;
+    }
+
+    &:hover::before,
+    &:hover::after {
+        opacity: 1;
+    }
 }
 
 .imgBlock1,
@@ -127,4 +169,63 @@
     color: #fff;
     text-transform: uppercase;
     white-space: nowrap;
+}
+
+.swiper {
+    width: 800px;
+    height: 600px;
+    background: $black;
+
+    @media (max-width: $xl) {
+        width: 600px;
+        height: 450px;
+    }
+
+    @media (max-width: $md) {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: $green;
+    z-index: -1;
+    opacity: 0;
+    transition: $transition;
+}
+
+.modalOpen {
+    opacity: 1;
+    z-index: 100;
+}
+
+.caption {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 50px;
+}
+
+.close {
+    position: absolute;
+    right: 10%;
+    top: 40px;
+
+    & rect {
+        transition: $transition;
+    }
+
+    &:hover rect {
+        fill: $light-gray;
+    }
 }

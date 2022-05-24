@@ -73,7 +73,12 @@ const Space = ({ obj }) => {
                                                 className={styles.imgBlock}
                                             ></div>
                                         </div> */}
-                                        <img src={card.imgSrc} alt="gallery" />
+                                        <Image
+                                            src={card.imgSrc}
+                                            alt="card"
+                                            layout="fill"
+                                            objectFit="contain"
+                                        />
                                     </SwiperSlide>
                                 ))}
                                 <SlideBtn type="prev" />

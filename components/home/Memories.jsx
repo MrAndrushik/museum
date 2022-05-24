@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../../styles/home/Memories.module.scss";
 
 const Memories = ({ tags }) => {
     const [activeTag, setActiveTag] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {}, []);
 
     return (
         <section className={styles.memories}>
@@ -26,6 +29,14 @@ const Memories = ({ tags }) => {
                                 </h3>
                             </li>
                         ))}
+                        {/* <button className={styles.tagBtn}>
+                            <Image
+                                alt="arrow"
+                                width={32}
+                                height={32}
+                                src="/img/arrow-right.svg"
+                            />
+                        </button> */}
                     </ul>
                     <div className={styles.flex}>
                         <div className={styles.content}>
@@ -42,6 +53,7 @@ const Memories = ({ tags }) => {
                         </div>
                         <div className={styles.image}>
                             <Image
+                                priority
                                 src={tags[activeTag].imgSrc}
                                 alt="cartoon"
                                 layout="fill"

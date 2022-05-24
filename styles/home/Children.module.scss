@@ -53,7 +53,13 @@
     position: relative;
     z-index: 1;
 
+    @media (max-width: $xl) {
+        padding-left: 15%;
+        padding-right: 44px;
+    }
+
     @media (max-width: $md) {
+        padding: 0;
         max-width: 260px;
         margin: 0 auto;
     }
