@@ -1,0 +1,17 @@
+{
+    "title": "Все наши комнаты могут приехать к вам на мероприятие",
+    "cards": [
+        {
+            "imgSrc": "/img/museum-on-departure/rooms-1.jpg",
+            "descr": "Советская библиотека"
+        },
+        {
+            "imgSrc": "/img/museum-on-departure/rooms-2.jpg",
+            "descr": "Музыкальный салон"
+        },
+        {
+            "imgSrc": "/img/museum-on-departure/rooms-3.jpg",
+            "descr": "Детская комната"
+        }
+    ]
+}

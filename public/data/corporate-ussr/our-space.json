@@ -1,0 +1,27 @@
+{
+    "title": "проводим мероприятия  на нашей площадке",
+    "notice": "с бесплатным посещением музея*",
+    "linkText": "Подробнее",
+    "link": "/",
+    "cards": [
+        {
+            "videoLink": "https://www.youtube.com/",
+            "imgSrc": "/img/corporate-ussr/video-1.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-2.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-3.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-1.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-2.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-3.jpg"
+        }
+    ]
+}

@@ -67,6 +67,7 @@
 
     @media (max-width: $xl) {
         padding-top: 244px;
+        width: 83%;
         padding-bottom: 80px;
     }
 }
@@ -100,7 +101,6 @@
     }
 
     @media (max-width: $md) {
-        font-weight: 700;
         font-size: 32px;
         line-height: 40px;
     }
@@ -148,6 +148,10 @@
         max-width: 260px;
         min-width: unset;
     }
+
+    @media (max-width: $md) {
+        max-width: unset;
+    }
 }
 
 .img3 {
@@ -169,5 +173,10 @@
 
     @media (max-width: $xl) {
         max-width: unset;
+        padding-right: 30px;
+    }
+
+    @media (max-width: $md) {
+        padding-right: 10px;
     }
 }

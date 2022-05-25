@@ -1,0 +1,45 @@
+@import "../const";
+
+.questions {
+    background-color: $green;
+    margin: 0;
+    padding: 0;
+    color: $black;
+
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.container {
+    background-color: #fff;
+    display: flex;
+    padding: 56px 10px;
+    align-items: center;
+}
+
+.wrapper {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 150px;
+}
+
+.content {
+    max-width: 512px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 41px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.descr {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+}

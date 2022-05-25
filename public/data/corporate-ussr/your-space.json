@@ -1,0 +1,26 @@
+{
+    "title": "наши мероприятия  на вашей площадке",
+    "linkText": "Подробнее",
+    "link": "/",
+    "cards": [
+        {
+            "videoLink": "https://www.youtube.com/",
+            "imgSrc": "/img/corporate-ussr/video-2.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-2.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-3.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-1.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-2.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-3.jpg"
+        }
+    ]
+}

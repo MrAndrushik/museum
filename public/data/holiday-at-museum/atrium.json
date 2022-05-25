@@ -1,0 +1,30 @@
+{
+    "title": "У нас есть несколько локаций для проведения праздников",
+    "linkText": "Оставить заявку",
+    "descr": "Мультиформатная площадка с собственной кухней и современным техническим оборудованием. Камеры, LED-экран, сцена со звуком и светом, собственная парковка",
+    "room": "Зал Атриум",
+    "link": "/",
+    "info": [
+        { "value": "280", "unit": "м2", "descr": "площадь зала" },
+        { "value": "500", "unit": "человек", "descr": "вместимость площадки" },
+        { "value": "15", "unit": "м2", "descr": "LED - экран" },
+        { "value": "16", "unit": "камер", "descr": "для онлайн-трансляций" }
+    ],
+    "cards": [
+        {
+            "imgSrc": "/img/holiday-at-museum/atrium-1.jpg"
+        },
+        {
+            "imgSrc": "/img/holiday-at-museum/atrium-2.jpg"
+        },
+        {
+            "imgSrc": "/img/holiday-at-museum/atrium-3.jpg"
+        },
+        {
+            "imgSrc": "/img/holiday-at-museum/atrium-1.jpg"
+        },
+        {
+            "imgSrc": "/img/holiday-at-museum/atrium-2.jpg"
+        }
+    ]
+}

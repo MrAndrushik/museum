@@ -1,0 +1,17 @@
+{
+    "title": "Создадим эпоху у вас на празднике ",
+    "cards": [
+        {
+            "imgSrc": "/img/corporate-ussr/era-1.jpg",
+            "descr": "На корпоративе"
+        },
+        {
+            "imgSrc": "/img/corporate-ussr/era-2.jpg",
+            "descr": "На вашем юбилее"
+        },
+        {
+            "imgSrc": "/img/corporate-ussr/era-3.jpg",
+            "descr": "На свадьбе"
+        }
+    ]
+}

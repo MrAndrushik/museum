@@ -70,6 +70,7 @@
     width: 66%;
 
     @media (max-width: $xl) {
+        margin-top: 0;
         width: 100%;
     }
 }

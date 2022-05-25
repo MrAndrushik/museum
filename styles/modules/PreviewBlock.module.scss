@@ -15,6 +15,21 @@
     }
 }
 
+.previewBlock {
+    background-color: #fff;
+    color: #000;
+}
+
+.dark {
+    background-color: $black;
+    color: #fff;
+}
+
+.green {
+    background-color: $green;
+    color: #fff;
+}
+
 .flex {
     width: 83.3%;
 
@@ -31,51 +46,11 @@
     }
 }
 
-.link {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 30%;
-    width: 180px;
-    height: 180px;
-    background-color: $light-green;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    line-height: 26px;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: #fff;
-    font-weight: 500;
-    transition: $transition;
-
-    &:hover {
-        width: 160px;
-        height: 160px;
-        background-color: $dark-green;
-    }
+.titleMargin {
+    margin-bottom: 80px;
 
     @media (max-width: $xxl) {
-        width: 148px;
-        height: 148px;
-
-        &:hover {
-            width: 120px;
-            height: 120px;
-        }
-    }
-
-    @media (max-width: $xl) {
-        display: none;
-    }
-}
-
-.mobile {
-    display: none;
-
-    @media (max-width: $xl) {
-        display: flex;
+        margin-bottom: 48px;
     }
 }
 
@@ -105,6 +80,7 @@
 
 .descr {
     margin-bottom: 32px;
+    color: currentColor;
 
     @media (max-width: $xxl) {
         font-size: 16px;
@@ -210,6 +186,7 @@
 }
 
 .text {
+    color: currentColor;
     margin-top: 16px;
     padding-bottom: 40px;
 }

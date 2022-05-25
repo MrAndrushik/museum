@@ -1,16 +1,16 @@
 import Head from "next/head";
-import History from "../components/History";
+import History from "../components/modules/History";
 import Children from "../components/home/Children";
 import Hero from "../components/home/Hero";
 import Memories from "../components/home/Memories";
 import Types from "../components/home/Types";
-import PreviewBlock from "../components/PreviewBlock";
+import PreviewBlock from "../components/modules/PreviewBlock";
 import Exhibits from "../components/home/Exhibits";
 import Contacts from "../components/home/Contacts";
-import USSRCorporate from "../components/USSRCorporate";
-import Space from "../components/Space";
+import USSRCorporate from "../components/modules/USSRCorporate";
+import Space from "../components/modules/Space";
 import SEO from "../components/home/SEO";
-import News from "../components/News";
+import News from "../components/modules/News";
 
 // DATA
 import HistoryData from "../public/data/home/history.json";
@@ -19,9 +19,9 @@ import MemoriesData from "../public/data/home/memories.json";
 import TypesData from "../public/data/home/types.json";
 import MuseumDepartureData from "../public/data/home/museum-departure.json";
 import ExhibitsData from "../public/data/home/exhibits.json";
-import USSRCorporateData from "../public/data/USSRcorporate.json";
+import USSRCorporateData from "../public/data/corporate-ussr/USSRcorporate.json";
 import SpaceData from "../public/data/home/space.json";
-import NewsData from "../public/data/news.json";
+import NewsData from "../public/data/news/news.json";
 
 export default function Home() {
     return (

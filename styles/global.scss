@@ -67,9 +67,30 @@ a {
 
 .stn-title {
     font-weight: 500;
+    font-size: 56px;
+    line-height: 72px;
+    text-transform: uppercase;
+
+    @media (max-width: $xxl) {
+        font-size: 48px;
+        line-height: 64px;
+    }
+    @media (max-width: $md) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.caption {
+    text-transform: uppercase;
+    font-weight: 500;
     font-size: 48px;
     line-height: 56px;
-    text-transform: uppercase;
+
+    @media (max-width: $xxl) {
+        font-size: 40px;
+        line-height: 48px;
+    }
 
     @media (max-width: $md) {
         font-size: 24px;
@@ -189,6 +210,10 @@ a {
 
 .header__logo {
     z-index: 1;
+}
+
+.header__logo-link {
+    line-height: 0;
 }
 
 .nav {

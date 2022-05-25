@@ -4,6 +4,10 @@
     color: #fff;
     background: $black;
     position: relative;
+
+    @media (max-width: $xl) {
+        overflow-x: auto;
+    }
 }
 
 .container {
@@ -37,51 +41,28 @@
     }
 }
 
-.link {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 30%;
-    width: 180px;
-    height: 180px;
-    background-color: $yellow;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    line-height: 26px;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: $black;
-    font-weight: 500;
-    transition: $transition;
-
-    &:hover {
-        width: 160px;
-        height: 160px;
-        background-color: $yellowDark;
-    }
+.titleMargined {
+    margin-bottom: 80px;
 
     @media (max-width: $xxl) {
-        width: 148px;
-        height: 148px;
-
-        &:hover {
-            width: 120px;
-            height: 120px;
-        }
+        margin-bottom: 48px;
     }
 
     @media (max-width: $xl) {
-        display: none;
+        margin-bottom: 32px;
     }
 }
 
-.mobile {
-    display: none;
+.room {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 41px;
+    margin-bottom: 32px;
 
-    @media (max-width: $xl) {
-        display: flex;
+    @media (max-width: $md) {
+        font-size: 20px;
+        line-height: 28px;
     }
 }
 
@@ -92,7 +73,7 @@
 
     @media (max-width: $xl) {
         flex-direction: column;
-        margin-bottom: 0;
+        margin-bottom: 32px;
     }
 }
 
@@ -152,7 +133,6 @@
 }
 
 .descr {
-    margin-bottom: 32px;
     color: #fff;
     max-width: 442px;
 
@@ -171,26 +151,61 @@
 }
 
 .notice {
-    padding-left: 48px;
     position: relative;
     font-size: 16px;
     line-height: 20px;
     text-transform: uppercase;
-    color: #fff;
+    color: $yellow;
 }
 
 .swiper {
     overflow: auto;
     height: 100%;
     height: fit-content;
+    width: 100%;
 
     & .slide {
-        min-height: 400px;
+        position: relative;
+        width: auto;
     }
 
-    @media (max-width: $xl) {
+    @media (max-width: $xxl) {
         max-width: unset;
         height: unset;
+    }
+}
+
+.videoBtn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-40px, -40px);
+
+    & svg circle,
+    & svg path {
+        transition: $transition;
+    }
+
+    &:hover circle:nth-child(2) {
+        fill: $green;
+        r: 41px;
+    }
+
+    &:hover path {
+        fill: #fff;
+    }
+}
+
+.imgBlock {
+    object-fit: contain;
+    height: 400px;
+
+    @media (max-width: $xxl) {
+        height: 328px;
+    }
+
+    @media (max-width: $md) {
+        height: 190px;
     }
 }
 
@@ -199,7 +214,6 @@
     display: flex;
     margin-left: auto;
     @media (max-width: $xl) {
-        width: 100%;
         margin-left: 0;
 
         & > div {
@@ -218,16 +232,6 @@
 .card {
     cursor: pointer;
 }
-
-// .imgBlock {
-//     width: 278px;
-//     height: 278px;
-
-//     @media (max-width: $xxl) {
-//         width: 240px;
-//         height: 240px;
-//     }
-// }
 
 .text {
     margin-top: 16px;

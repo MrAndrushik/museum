@@ -134,6 +134,10 @@
     @media (max-width: $xxl) {
         margin-left: 44px;
     }
+
+    @media (max-width: $xl) {
+        max-width: unset;
+    }
 }
 
 .image {

@@ -1,0 +1,35 @@
+{
+    "linkText": "Оставить заявку",
+    "descr": "Прекрасно подходит под мероприятие для узкого круга гостей: день рождения, свадьбу, девичник. Здесь можно поставить один длинный, Т-образный или П-образный стол, а можно использовать этот зал как дополнительный к основному залу «Атриум».",
+    "room": "Зал Венеция",
+    "link": "/",
+    "info": [
+        {
+            "value": "45",
+            "unit": "м2",
+            "descr": "площадь зала"
+        },
+        {
+            "value": "60",
+            "unit": "человек",
+            "descr": "вместимость площадки"
+        }
+    ],
+    "cards": [
+        {
+            "imgSrc": "/img/holiday-at-museum/Venice-1.jpg"
+        },
+        {
+            "imgSrc": "/img/holiday-at-museum/Venice-2.jpg"
+        },
+        {
+            "imgSrc": "/img/holiday-at-museum/Venice-3.jpg"
+        },
+        {
+            "imgSrc": "/img/holiday-at-museum/Venice-1.jpg"
+        },
+        {
+            "imgSrc": "/img/holiday-at-museum/Venice-2.jpg"
+        }
+    ]
+}

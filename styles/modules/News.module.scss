@@ -18,57 +18,6 @@
     }
 }
 
-.link {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 30%;
-    width: 180px;
-    height: 180px;
-    background-color: $light-green;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    line-height: 26px;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: #fff;
-    font-weight: 500;
-    transition: $transition;
-    text-align: center;
-
-    &:hover {
-        width: 160px;
-        height: 160px;
-        background-color: $dark-green;
-    }
-
-    @media (max-width: $xxl) {
-        width: 148px;
-        height: 148px;
-
-        &:hover {
-            width: 120px;
-            height: 120px;
-        }
-    }
-
-    @media (max-width: $xl) {
-        display: none;
-    }
-}
-
-.mobile {
-    display: none;
-
-    @media (max-width: $xl) {
-        display: flex;
-        text-align: center;
-        padding: 0 5px;
-    }
-}
-
 .imgBlock {
     position: relative;
     min-width: 378px;

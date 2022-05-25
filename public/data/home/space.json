@@ -18,6 +18,15 @@
         },
         {
             "imgSrc": "/img/home/space-3.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-1.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-2.jpg"
+        },
+        {
+            "imgSrc": "/img/home/space-3.jpg"
         }
     ]
 }

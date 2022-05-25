@@ -33,6 +33,13 @@
     }
 }
 
+.titleMargin {
+    margin-bottom: 52px;
+    @media (max-width: $xl) {
+        margin-bottom: 24px;
+    }
+}
+
 .swiper {
     overflow: auto;
     @media (max-width: $xl) {

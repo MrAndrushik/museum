@@ -1,0 +1,66 @@
+@import "../const";
+
+.link {
+    position: -webkit-sticky;
+    position: sticky;
+    padding: 0 10px;
+    top: 30%;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    transition: $transition;
+
+    &:hover {
+        transform: scale(0.9);
+        background-color: $dark-green;
+    }
+
+    @media (max-width: $xxl) {
+        width: 148px;
+        height: 148px;
+
+        &:hover {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.green {
+    color: #fff;
+    background-color: $light-green;
+
+    &:hover {
+        background-color: $dark-green;
+    }
+}
+
+.yellow {
+    color: $black;
+    background-color: $yellow;
+
+    &:hover {
+        background-color: $yellowDark;
+    }
+}
+
+.mobile {
+    display: none;
+
+    @media (max-width: $xl) {
+        display: flex;
+    }
+}
