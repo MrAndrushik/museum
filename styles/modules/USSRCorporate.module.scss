@@ -1,6 +1,7 @@
 @import "../const";
 
 .corporate {
+    overflow: hidden;
     color: #fff;
     background-color: $green;
     position: relative;
@@ -52,7 +53,7 @@
 
     @media (max-width: $xl) {
         flex-direction: column-reverse;
-        gap: 70px;
+        gap: 0px;
     }
 }
 
@@ -177,7 +178,12 @@
         );
     }
 
+    @media (max-width: $xl) {
+        margin-bottom: 70px;
+    }
+
     @media (max-width: $md) {
-        width: 290px;
+        width: 260px;
+        height: 396px;
     }
 }
