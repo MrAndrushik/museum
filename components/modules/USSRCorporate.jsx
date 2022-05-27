@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EffectCards } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper";
 
 import "swiper/css";
 import styles from "../../styles/modules/USSRCorporate.module.scss";
@@ -72,6 +73,7 @@ const USSRCorporate = ({ obj }) => {
                                         spaceBetween: 24,
                                     },
                                 }}
+                                modules={[Scrollbar]}
                                 grabCursor={true}
                                 scrollbar
                                 slidesPerView="auto"

@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { links } from "./Header";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+    const router = useRouter();
     return (
         <footer className="footer">
             <div className="container footer__container">
@@ -14,31 +17,21 @@ const Footer = () => {
                 />
                 <nav className="footer__nav">
                     <ul className="footer__list">
-                        <li className="footer__item">
-                            <Link href="/">
-                                <a className="footer__link">Мероприятия СССР</a>
-                            </Link>
-                        </li>
-                        <li className="footer__item">
-                            <Link href="/">
-                                <a className="footer__link">Музей на выезд</a>
-                            </Link>
-                        </li>
-                        <li className="footer__item">
-                            <Link href="/">
-                                <a className="footer__link">Праздник в музее</a>
-                            </Link>
-                        </li>
-                        <li className="footer__item">
-                            <Link href="/">
-                                <a className="footer__link">О нас</a>
-                            </Link>
-                        </li>
-                        <li className="footer__item">
-                            <Link href="/">
-                                <a className="footer__link">Контакты</a>
-                            </Link>
-                        </li>
+                        {links.map((link, index) => (
+                            <li key={index} className="footer__item">
+                                <Link href={link.href}>
+                                    <a
+                                        className={
+                                            router.pathname === link.href
+                                                ? "footer__link footer__link--active"
+                                                : "footer__link"
+                                        }
+                                    >
+                                        {link.title}
+                                    </a>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
                 <div className="footer__buttons">

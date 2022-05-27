@@ -1,0 +1,181 @@
+@import "../const";
+
+.tickets {
+    background-color: $green;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    gap: 120px;
+
+    @media (max-width: $xl) {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    @media (max-width: $md) {
+        padding: 0;
+    }
+}
+
+.column1 {
+    min-width: 720px;
+    @media (max-width: $xl) {
+        min-width: unset;
+    }
+    @media (max-width: $md) {
+        padding-left: 10px;
+    }
+}
+
+.column2 {
+    max-width: 328px;
+    @media (max-width: $xl) {
+        max-width: unset;
+    }
+    @media (max-width: $md) {
+        padding: 0 10px;
+    }
+}
+
+.wrapper {
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.title {
+    margin-bottom: 48px;
+
+    @media (max-width: $md) {
+        margin-bottom: 32px;
+    }
+}
+
+.ticket {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 16px;
+
+    @media (max-width: $xl) {
+        padding: 16px;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+
+.imgBlock {
+    position: relative;
+    min-width: 240px;
+    height: 132px;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: $xl) {
+        text-align: right;
+    }
+}
+
+.flexMargined {
+    margin-bottom: 12px;
+
+    @media (max-width: $xl) {
+        margin-bottom: 32px;
+    }
+}
+
+.caption,
+.price {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+
+    @media (max-width: $xl) {
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 8px;
+    }
+}
+
+.span {
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.text {
+    font-size: 14px;
+    line-height: 20px;
+    display: block;
+}
+
+.notice {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: $yellow;
+    margin-bottom: 16px;
+}
+
+.noticeDescr {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+}
+
+.swiper {
+    display: none;
+    @media (max-width: $xl) {
+        display: block;
+        max-width: unset;
+        padding: 0;
+        margin-bottom: 48px;
+
+        & .slide {
+            width: 272px;
+            min-height: 316px;
+        }
+    }
+
+    @media (max-width: $md) {
+        & .slide {
+            width: 300px;
+        }
+    }
+}
+
+.swiperConntainer {
+    width: 83.3%;
+    display: flex;
+    margin-left: auto;
+    @media (max-width: $xl) {
+        width: 100%;
+        margin-left: 0;
+
+        & > div {
+            margin-left: calc((100% - $md + 20px) / 2);
+            padding-right: 10px;
+        }
+    }
+
+    @media (max-width: $md) {
+        & > div {
+            margin-left: 0px;
+        }
+    }
+}

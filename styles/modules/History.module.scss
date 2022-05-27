@@ -41,7 +41,6 @@
 }
 
 .swiper {
-    overflow: auto;
     @media (max-width: $xl) {
         max-width: unset;
         padding: 0;
@@ -89,7 +88,7 @@
     margin-top: 16px;
     font-size: 18px;
     line-height: 26px;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
 
     @media (max-width: $xxl) {
         font-size: 16px;

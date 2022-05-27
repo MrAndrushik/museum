@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import useModal from "../../hooks/useModal";
 import { Swiper, SwiperSlide } from "swiper/react";
+import cl from "classnames";
 
 import "swiper/css";
 
@@ -32,7 +33,11 @@ const Exhibits = ({ obj }) => {
                         <ul className={styles.tags}>
                             {tags.map((tag) => (
                                 <li
-                                    className={`${styles.text} stn-text`}
+                                    onClick={() => setActiveCategory(tag)}
+                                    className={cl(`${styles.text} stn-text`, {
+                                        [styles.tagActive]:
+                                            tag === activeCategory,
+                                    })}
                                     key={tag}
                                 >
                                     {tag}

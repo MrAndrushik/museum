@@ -1,14 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
 import useModal from "../../hooks/useModal";
+import { useRouter } from "next/router";
 import {
     MUSEUM_ON_DEPARTURE,
     CORPORATE_OF_THE_USSR,
     HOLIDAY_AT_THE_MUSEUM,
     MUSEUM,
+    CONTACT,
 } from "../../const/routes";
 
+export const links = [
+    {
+        title: "Мероприятия СССР",
+        href: CORPORATE_OF_THE_USSR,
+    },
+    {
+        title: "Музей на выезд",
+        href: MUSEUM_ON_DEPARTURE,
+    },
+    {
+        title: "Праздник в музее",
+        href: HOLIDAY_AT_THE_MUSEUM,
+    },
+    {
+        title: "О нас",
+        href: MUSEUM,
+    },
+    {
+        title: "Контакты",
+        href: CONTACT,
+    },
+];
+
 const Header = () => {
+    const router = useRouter();
     const { onToggle, isOpen, onClose } = useModal();
 
     const onBurgerClick = () => {
@@ -20,29 +46,6 @@ const Header = () => {
         onClose();
         document.querySelector("html").classList.remove("hidden");
     };
-
-    const links = [
-        {
-            title: "Мероприятия СССР",
-            href: CORPORATE_OF_THE_USSR,
-        },
-        {
-            title: "Музей на выезд",
-            href: MUSEUM_ON_DEPARTURE,
-        },
-        {
-            title: "Праздник в музее",
-            href: HOLIDAY_AT_THE_MUSEUM,
-        },
-        {
-            title: "О нас",
-            href: MUSEUM,
-        },
-        {
-            title: "Контакты",
-            href: "/",
-        },
-    ];
 
     return (
         <header className="header">
@@ -65,7 +68,11 @@ const Header = () => {
                                 <Link href={link.href}>
                                     <a
                                         onClick={() => handleLinks()}
-                                        className="nav__link"
+                                        className={
+                                            router.pathname === link.href
+                                                ? "nav__link nav__link--active"
+                                                : "nav__link"
+                                        }
                                     >
                                         {link.title}
                                     </a>

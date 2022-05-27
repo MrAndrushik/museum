@@ -1,5 +1,10 @@
 import Head from "next/head";
 import Hero from "../components/about/Hero";
+import Souvenirs from "../components/about/Souvenirs";
+import Tickets from "../components/modules/Tickets";
+
+// DATA
+import SouvenirsData from "../public/data/about/souvenirs.json";
 
 export default function corporateUSSR() {
     return (
@@ -13,6 +18,8 @@ export default function corporateUSSR() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Hero />
+            <Souvenirs obj={SouvenirsData["souvenirs"]} />
+            <Tickets />
         </>
     );
 }

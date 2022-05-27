@@ -1,0 +1,76 @@
+{
+    "souvenirs": [
+        {
+            "imgSrc": "/img/about/souvenirs-1.jpg",
+            "title": "Набор спичек",
+            "price": "500",
+            "shortDescr": "Описание товара"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-1.jpg",
+            "title": "Набор спичек",
+            "price": "500",
+            "shortDescr": "Описание товара"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-2.jpg",
+            "title": "title",
+            "price": "500",
+            "shortDescr": "description/description/description"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-1.jpg",
+            "title": "Набор спичек",
+            "price": "500",
+            "shortDescr": "Описание товара"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-1.jpg",
+            "title": "Набор спичек",
+            "price": "500",
+            "shortDescr": "Описание товара"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-2.jpg",
+            "title": "title",
+            "price": "500",
+            "shortDescr": "description/description/description "
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-1.jpg",
+            "title": "Набор спичек",
+            "price": "500",
+            "shortDescr": "Описание товара"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-1.jpg",
+            "title": "Набор спичек",
+            "price": "500",
+            "shortDescr": "Описание товара"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-2.jpg",
+            "title": "title",
+            "price": "500",
+            "shortDescr": "description/description/description "
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-1.jpg",
+            "title": "Набор спичек",
+            "price": "500",
+            "shortDescr": "Описание товара"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-1.jpg",
+            "title": "Набор спичек",
+            "price": "500",
+            "shortDescr": "Описание товара"
+        },
+        {
+            "imgSrc": "/img/about/souvenirs-2.jpg",
+            "title": "title",
+            "price": "500",
+            "shortDescr": "description/description/description "
+        }
+    ]
+}
