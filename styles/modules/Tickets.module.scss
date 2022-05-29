@@ -1,5 +1,41 @@
 @import "../const";
 
+.modal {
+    position: fixed;
+    overflow-y: scroll;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: $green;
+    z-index: -1;
+    opacity: 0;
+    transition: $transition;
+}
+
+.modal .container {
+    justify-content: space-around;
+}
+
+.modalOpen {
+    z-index: 100;
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    & rect {
+        transition: $transition;
+    }
+
+    &:hover rect {
+        fill: $light-gray;
+    }
+}
+
 .tickets {
     background-color: $green;
     color: #fff;
@@ -15,7 +51,7 @@
     }
 
     @media (max-width: $md) {
-        padding: 0;
+        padding: 0 !important;
     }
 }
 
@@ -23,6 +59,7 @@
     min-width: 720px;
     @media (max-width: $xl) {
         min-width: unset;
+        margin-bottom: 48px;
     }
     @media (max-width: $md) {
         padding-left: 10px;
@@ -143,8 +180,7 @@
     @media (max-width: $xl) {
         display: block;
         max-width: unset;
-        padding: 0;
-        margin-bottom: 48px;
+        padding: 0 !important;
 
         & .slide {
             width: 272px;
@@ -153,6 +189,7 @@
     }
 
     @media (max-width: $md) {
+        padding: 0;
         & .slide {
             width: 300px;
         }

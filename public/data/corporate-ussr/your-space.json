@@ -1,7 +1,7 @@
 {
     "title": "наши мероприятия  на вашей площадке",
-    "linkText": "Подробнее",
-    "link": "/",
+    "linkText": "Оставить заявку",
+    "link": "#feedback",
     "cards": [
         {
             "videoLink": "https://www.youtube.com/",

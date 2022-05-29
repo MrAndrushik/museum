@@ -6,8 +6,17 @@ import "swiper/css/scrollbar";
 import styles from "../../styles/modules/Tickets.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar } from "swiper";
+import { useDispatch } from "react-redux";
+import { setTicketIsOpen } from "../../redux/toolkitSlice";
 
-const Tickets = () => {
+const Tickets = ({ type }) => {
+    const dispatch = useDispatch();
+
+    const handleTicketClick = () => {
+        document.querySelector("html").classList.remove("hidden");
+        dispatch(setTicketIsOpen(false));
+    };
+
     const tickets = [
         {
             imgSrc: "/img/tickets/ticket-1.jpg",
@@ -36,78 +45,37 @@ const Tickets = () => {
     ];
     return (
         <section className={styles.tickets}>
-            {/* <div className={`${styles.swiper} container`}>
-                <div className={styles.swiperConntainer}>
-                    <Swiper
-                        scrollbar={{
-                            hide: false,
-                        }}
-                        slidesPerView="auto"
-                        spaceBetween={24}
-                        breakpoints={{
-                            1228: {
-                                slidesPerView: 3,
-                                spaceBetween: 24,
-                            },
-                        }}
-                        modules={[Scrollbar]}
-                        className="history-swiper"
-                    >
-                        {tickets.map((ticket, index) => (
-                            <SwiperSlide className={styles.slide} key={index}>
-                                <div
-                                    style={{
-                                        color: `${ticket.color}`,
-                                        backgroundColor: `${ticket.background}`,
-                                    }}
-                                    key={index}
-                                    className={styles.ticket}
-                                >
-                                    <div className={styles.imgBlock}>
-                                        <Image
-                                            alt="ticket preview"
-                                            src={ticket.imgSrc}
-                                            layout="fill"
-                                            objectFit="cover"
-                                        />
-                                    </div>
-                                    <div className={styles.content}>
-                                        <div
-                                            className={`${styles.flex} ${styles.flexMargined}`}
-                                        >
-                                            <span className={styles.span}>
-                                                Для
-                                            </span>
-                                            <div>
-                                                <h3 className={styles.caption}>
-                                                    {ticket.caption}
-                                                </h3>
-                                                <span className={styles.text}>
-                                                    {ticket.descr}
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div className={styles.flex}>
-                                            <span className={styles.span}>
-                                                Цена
-                                            </span>
-                                            <div>
-                                                <h3 className={styles.price}>
-                                                    {ticket.price} ₽
-                                                </h3>
-                                                <span className={styles.text}>
-                                                    1 чел
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-            </div> */}
             <div className={`${styles.container} container`}>
+                {type === "modal" && (
+                    <button
+                        onClick={() => handleTicketClick()}
+                        className={styles.close}
+                    >
+                        <svg
+                            width="48"
+                            height="48"
+                            viewBox="0 0 48 48"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect width="48" height="48" fill="#fff" />
+                            <path
+                                d="M30 18L18 30"
+                                stroke="#131722"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                d="M18 18L30 30"
+                                stroke="#131722"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </button>
+                )}
                 <div className={styles.column1}>
                     <h2 className={`${styles.title} stn-title`}>
                         Билеты в музей{" "}
@@ -260,7 +228,7 @@ const Tickets = () => {
                     <p className={styles.notice}>Внимание!</p>
                     <p className={styles.noticeDescr}>
                         Бронирования онлайн билетов на сайте нет. Напишите в
-                        комментарие сколько билетов и на какое число вам нужно
+                        комментарие сколько билетов и на какое число вам нужно.
                     </p>
                     <Form title="Оформление заказа" />
                 </div>

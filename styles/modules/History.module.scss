@@ -26,6 +26,7 @@
 }
 
 .title {
+    white-space: pre-line;
     margin-bottom: 32px;
 
     @media (max-width: $xxl) {

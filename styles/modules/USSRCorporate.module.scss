@@ -1,10 +1,13 @@
 @import "../const";
 
 .corporate {
-    overflow: hidden;
     color: #fff;
     background-color: $green;
     position: relative;
+
+    @media (max-width: $xl) {
+        overflow: hidden;
+    }
 }
 
 .container {

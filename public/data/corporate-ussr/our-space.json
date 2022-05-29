@@ -1,8 +1,8 @@
 {
     "title": "проводим мероприятия  на нашей площадке",
     "notice": "с бесплатным посещением музея*",
-    "linkText": "Подробнее",
-    "link": "/",
+    "linkText": "Оставить заявку",
+    "link": "#feedback",
     "cards": [
         {
             "videoLink": "https://www.youtube.com/",

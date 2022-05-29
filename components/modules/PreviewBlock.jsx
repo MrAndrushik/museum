@@ -31,6 +31,7 @@ const PreviewBlock = ({ obj, type = "light" }) => {
             )} */}
             <div className={`${styles.container} container`}>
                 <CircleLink
+                    onClick={obj.link === "#feedback" ? true : false}
                     theme={type === "light" ? "green" : "yellow"}
                     href={obj.link}
                     mobile={false}
@@ -135,6 +136,7 @@ const PreviewBlock = ({ obj, type = "light" }) => {
             </div>
             <div className={`container`}>
                 <CircleLink
+                    onClick={obj.link === "#feedback" ? true : false}
                     theme={type === "light" ? "green" : "yellow"}
                     href={obj.link}
                     mobile={true}

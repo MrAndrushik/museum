@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../../styles/home/Hero.module.scss";
+import { motion } from "framer-motion";
 
 const Hero = () => {
     return (
@@ -48,7 +49,16 @@ const Hero = () => {
                         <span>Музей</span>
                         <span className={styles.span}>Советского Детства</span>
                     </h1>
-                    <div className={styles.img1}>
+                    <motion.div
+                        className={styles.img1}
+                        animate={{ x: [0, 0, 100, 0], y: [0, -60, -60, 0] }}
+                        transition={{
+                            ease: "easeOut",
+                            duration: 10,
+                            repeat: Infinity,
+                            type: "spring",
+                        }}
+                    >
                         <Image
                             className={`border-3`}
                             src="/img/home/hero-1.jpg"
@@ -56,10 +66,19 @@ const Hero = () => {
                             width={270}
                             height={210}
                         />
-                    </div>
+                    </motion.div>
                 </div>
                 <div className={styles.bottom}>
-                    <div className={styles.img2}>
+                    <motion.div
+                        className={styles.img2}
+                        animate={{ x: [0, -60, 50, 0], y: [0, 50, 30, 0] }}
+                        transition={{
+                            ease: "easeOut",
+                            duration: 8,
+                            repeat: Infinity,
+                            type: "spring",
+                        }}
+                    >
                         <Image
                             className="border-3"
                             src="/img/home/hero-2.jpg"
@@ -67,14 +86,23 @@ const Hero = () => {
                             width={420}
                             height={280}
                         />
-                    </div>
+                    </motion.div>
                     <p className={`${styles.description} stn-text`}>
                         Это ретро-пространство, оформленное винтажными
                         эксклюзивными предметами быта, мебели, сувенирами,
                         игрушками, книгами и журналами, а также прочими
                         артефактами недавнего прошлого нашей страны
                     </p>
-                    <div className={styles.img3}>
+                    <motion.div
+                        className={styles.img3}
+                        animate={{ x: [0, 100, 100, 0], y: [0, -100, 100, 0] }}
+                        transition={{
+                            ease: "easeOut",
+                            duration: 7,
+                            repeat: Infinity,
+                            type: "spring",
+                        }}
+                    >
                         <Image
                             className={`border-1`}
                             src="/img/home/hero-3.jpg"
@@ -82,7 +110,7 @@ const Hero = () => {
                             width={270}
                             height={270}
                         />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

@@ -14,7 +14,12 @@ const Space = ({ obj }) => {
     return (
         <section className={styles.space}>
             <div className={`${styles.container} container`}>
-                <CircleLink theme="yellow" href={obj.link} mobile={false}>
+                <CircleLink
+                    onClick={obj.link === "#feedback" ? true : false}
+                    theme="yellow"
+                    href={obj.link}
+                    mobile={false}
+                >
                     {obj.linkText}
                 </CircleLink>
                 <div className={styles.flex}>
@@ -136,7 +141,12 @@ const Space = ({ obj }) => {
                 </div>
             </div>
             <div className={`container`}>
-                <CircleLink theme="yellow" href={obj.link} mobile={true}>
+                <CircleLink
+                    onClick={obj.link === "#feedback" ? true : false}
+                    theme="yellow"
+                    href={obj.link}
+                    mobile={true}
+                >
                     {obj.linkText}
                 </CircleLink>
             </div>

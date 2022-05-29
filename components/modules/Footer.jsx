@@ -3,8 +3,18 @@ import Image from "next/image";
 import { links } from "./Header";
 import { useRouter } from "next/router";
 
+import { setTicketIsOpen } from "../../redux/toolkitSlice";
+import { useDispatch } from "react-redux";
+
 const Footer = () => {
+    const dispatch = useDispatch();
     const router = useRouter();
+
+    const handleTicketClick = () => {
+        document.querySelector("html").classList.add("hidden");
+        dispatch(setTicketIsOpen(true));
+    };
+
     return (
         <footer className="footer">
             <div className="container footer__container">
@@ -35,7 +45,10 @@ const Footer = () => {
                     </ul>
                 </nav>
                 <div className="footer__buttons">
-                    <button className="footer__tickets">
+                    <button
+                        className="footer__tickets"
+                        onClick={() => handleTicketClick()}
+                    >
                         <svg
                             width="32"
                             height="31"

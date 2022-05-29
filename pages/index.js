@@ -6,7 +6,6 @@ import Memories from "../components/home/Memories";
 import Types from "../components/home/Types";
 import PreviewBlock from "../components/modules/PreviewBlock";
 import Exhibits from "../components/home/Exhibits";
-import Contacts from "../components/home/Contacts";
 import USSRCorporate from "../components/modules/USSRCorporate";
 import Space from "../components/modules/Space";
 import SEO from "../components/home/SEO";
@@ -45,7 +44,6 @@ export default function Home() {
             <Exhibits obj={ExhibitsData} />
             <News obj={NewsData} />
             <SEO />
-            <Contacts />
         </>
     );
 }

@@ -19,7 +19,7 @@ const History = ({ obj }) => {
                                     [styles.titleMargin]: !descr,
                                 })}
                             >
-                                {title}
+                                {title.split("\r\n")}
                             </h2>
                         )}
                         {descr && (

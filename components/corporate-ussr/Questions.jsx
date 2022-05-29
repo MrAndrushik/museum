@@ -13,7 +13,7 @@ const Questions = () => {
                             персональное предложение
                         </p>
                     </div>
-                    <CircleLink href="/" theme="green">
+                    <CircleLink onClick={true} theme="green">
                         Оставить заявку
                     </CircleLink>
                 </div>

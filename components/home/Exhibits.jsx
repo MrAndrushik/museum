@@ -1,18 +1,22 @@
-import styles from "../../styles/home/Exhibits.module.scss";
 import { useState } from "react";
 import Image from "next/image";
+
 import useModal from "../../hooks/useModal";
+import { useSwiper } from "swiper/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import cl from "classnames";
+import styles from "../../styles/home/Exhibits.module.scss";
 
 import "swiper/css";
+import SlideBtn from "../modules/SlideBtn";
 
 const Exhibits = ({ obj }) => {
-    const { tags, cards } = obj;
     const [activeCategory, setActiveCategory] = useState("Разное");
+    const swiper = useSwiper();
+    const [activeSlide, setActiveSlide] = useState(0);
     const { onOpen, onClose, isOpen } = useModal();
 
-    const handleOpen = () => {
+    const handleOpen = (index) => {
         onOpen();
         document.querySelector("html").classList.add("hidden");
     };
@@ -21,6 +25,21 @@ const Exhibits = ({ obj }) => {
         onClose();
         document.querySelector("html").classList.remove("hidden");
     };
+
+    function ModalSlideBtn({ type }) {
+        const swiper = useSwiper();
+        return (
+            <button
+                className={cl({
+                    [styles.next]: type === "next",
+                    [styles.prev]: type === "prev",
+                })}
+                onClick={() =>
+                    type === "next" ? swiper.slideNext() : swiper.slidePrev()
+                }
+            ></button>
+        );
+    }
 
     return (
         <section className={styles.exhibit}>
@@ -31,7 +50,7 @@ const Exhibits = ({ obj }) => {
                     </h2>
                     <div className={`${styles.tagContainer} container`}>
                         <ul className={styles.tags}>
-                            {tags.map((tag) => (
+                            {obj.tags.map((tag) => (
                                 <li
                                     onClick={() => setActiveCategory(tag)}
                                     className={cl(`${styles.text} stn-text`, {
@@ -46,27 +65,26 @@ const Exhibits = ({ obj }) => {
                         </ul>
                     </div>
                     <div className={styles.wrapper}>
-                        {cards.map(
-                            (card, index) =>
-                                card.category === activeCategory && (
-                                    <div
-                                        onClick={() => handleOpen()}
-                                        className={
-                                            index % 4 < 2
-                                                ? `${styles.imgBlock1} ${styles.imgBlock}`
-                                                : `${styles.imgBlock2} ${styles.imgBlock}`
-                                        }
-                                        key={index}
-                                    >
-                                        <Image
-                                            objectFit="cover"
-                                            src={card.imgSrc}
-                                            alt="examples"
-                                            layout="fill"
-                                        />
-                                    </div>
-                                )
-                        )}
+                        {obj.cards
+                            .filter((obj) => obj.category === activeCategory)[0]
+                            ?.items.map((card, index) => (
+                                <div
+                                    onClick={() => handleOpen(index)}
+                                    className={
+                                        index % 4 < 2
+                                            ? `${styles.imgBlock1} ${styles.imgBlock}`
+                                            : `${styles.imgBlock2} ${styles.imgBlock}`
+                                    }
+                                    key={index}
+                                >
+                                    <Image
+                                        objectFit="cover"
+                                        src={card.imgSrc}
+                                        alt="examples"
+                                        layout="fill"
+                                    />
+                                </div>
+                            ))}
                     </div>
                 </div>
             </div>
@@ -108,17 +126,23 @@ const Exhibits = ({ obj }) => {
                     slidesPerView={1}
                     spaceBetween={24}
                     className={`${styles.swiper}`}
+                    initialSlide={activeSlide}
                 >
-                    {cards.map((card, index) => (
-                        <SwiperSlide className={styles.slide} key={index}>
-                            <Image
-                                objectFit="contain"
-                                src={card.imgSrc}
-                                alt="examples"
-                                layout="fill"
-                            />
-                        </SwiperSlide>
-                    ))}
+                    <ModalSlideBtn type="next" />
+                    <ModalSlideBtn type="prev" />
+                    {obj.cards
+                        .filter((obj) => obj.category === activeCategory)[0]
+                        .items.map((card, index) => (
+                            <SwiperSlide className={styles.slide} key={index}>
+                                <Image
+                                    objectFit="contain"
+                                    src={card.imgSrc}
+                                    alt="examples"
+                                    layout="fill"
+                                />
+                            </SwiperSlide>
+                        ))}
+                    <SlideBtn type="next" />
                 </Swiper>
             </div>
         </section>

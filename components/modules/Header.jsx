@@ -10,6 +10,9 @@ import {
     CONTACT,
 } from "../../const/routes";
 
+import { setTicketIsOpen } from "../../redux/toolkitSlice";
+import { useDispatch } from "react-redux";
+
 export const links = [
     {
         title: "Мероприятия СССР",
@@ -29,11 +32,12 @@ export const links = [
     },
     {
         title: "Контакты",
-        href: CONTACT,
+        href: "#contacts",
     },
 ];
 
 const Header = () => {
+    const dispatch = useDispatch();
     const router = useRouter();
     const { onToggle, isOpen, onClose } = useModal();
 
@@ -42,16 +46,24 @@ const Header = () => {
         onToggle();
     };
 
-    const handleLinks = () => {
+    const handleLinks = (e) => {
         onClose();
         document.querySelector("html").classList.remove("hidden");
+    };
+
+    const handleTicketClick = () => {
+        document.querySelector("html").classList.add("hidden");
+        dispatch(setTicketIsOpen(true));
     };
 
     return (
         <header className="header">
             <div className="container header__container">
                 <Link href="/">
-                    <a className="header__logo-link">
+                    <a
+                        onClick={() => handleLinks()}
+                        className="header__logo-link"
+                    >
                         <Image
                             className="header__logo"
                             src="/img/logo-dark.svg"
@@ -67,7 +79,7 @@ const Header = () => {
                             <li key={index} className="nav__item">
                                 <Link href={link.href}>
                                     <a
-                                        onClick={() => handleLinks()}
+                                        onClick={(e) => handleLinks(e)}
                                         className={
                                             router.pathname === link.href
                                                 ? "nav__link nav__link--active"
@@ -95,7 +107,10 @@ const Header = () => {
                             </a>
                         </Link>
                     </div>
-                    <button className="header__tickets">
+                    <button
+                        className="header__tickets"
+                        onClick={() => handleTicketClick()}
+                    >
                         <svg
                             width="32"
                             height="31"

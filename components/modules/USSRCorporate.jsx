@@ -13,7 +13,11 @@ const USSRCorporate = ({ obj }) => {
     return (
         <section className={styles.corporate}>
             <div className={`${styles.container} container`}>
-                <CircleLink theme={"yellow"} href={"/"} mobile={false}>
+                <CircleLink
+                    theme={"yellow"}
+                    href={"/meropriatia-ussr"}
+                    mobile={false}
+                >
                     Подробнее
                 </CircleLink>
                 <div className={styles.flex}>

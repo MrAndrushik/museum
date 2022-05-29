@@ -2,13 +2,83 @@
     "tags": ["Разное", "Книги", "Плакаты", "Игрушки", "Предметы быта"],
 
     "cards": [
-        { "imgSrc": "/img/home/exhibits-1.jpg", "category": "Разное" },
-        { "imgSrc": "/img/home/exhibits-2.jpg", "category": "Разное" },
-        { "imgSrc": "/img/home/exhibits-3.jpg", "category": "Разное" },
-        { "imgSrc": "/img/home/exhibits-4.jpg", "category": "Разное" },
-        { "imgSrc": "/img/home/exhibits-5.jpg", "category": "Разное" },
-        { "imgSrc": "/img/home/exhibits-6.jpg", "category": "Разное" },
-        { "imgSrc": "/img/home/exhibits-7.jpg", "category": "Разное" },
-        { "imgSrc": "/img/home/exhibits-8.jpg", "category": "Разное" }
+        {
+            "category": "Разное",
+            "items": [
+                { "imgSrc": "/img/home/exhibits-1.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-3.jpg" },
+                { "imgSrc": "/img/home/exhibits-4.jpg" },
+                { "imgSrc": "/img/home/exhibits-5.jpg" },
+                { "imgSrc": "/img/home/exhibits-6.jpg" },
+                { "imgSrc": "/img/home/exhibits-7.jpg" },
+                { "imgSrc": "/img/home/exhibits-8.jpg" }
+            ]
+        },
+        {
+            "category": "Книги",
+            "items": [
+                { "imgSrc": "/img/home/exhibits-8.jpg" },
+                { "imgSrc": "/img/home/exhibits-7.jpg" },
+                { "imgSrc": "/img/home/exhibits-6.jpg" },
+                { "imgSrc": "/img/home/exhibits-5.jpg" },
+                { "imgSrc": "/img/home/exhibits-4.jpg" },
+                { "imgSrc": "/img/home/exhibits-3.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-1.jpg" }
+            ]
+        },
+        {
+            "category": "Плакаты",
+            "items": [
+                { "imgSrc": "/img/home/exhibits-8.jpg" },
+                { "imgSrc": "/img/home/exhibits-7.jpg" },
+                { "imgSrc": "/img/home/exhibits-6.jpg" },
+                { "imgSrc": "/img/home/exhibits-5.jpg" },
+                { "imgSrc": "/img/home/exhibits-5.jpg" },
+                { "imgSrc": "/img/home/exhibits-5.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-1.jpg" }
+            ]
+        },
+        {
+            "category": "Игрушки",
+            "items": [
+                { "imgSrc": "/img/home/exhibits-1.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-6.jpg" },
+                { "imgSrc": "/img/home/exhibits-5.jpg" },
+                { "imgSrc": "/img/home/exhibits-4.jpg" },
+                { "imgSrc": "/img/home/exhibits-3.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-1.jpg" }
+            ]
+        },
+        {
+            "category": "Плакаты",
+            "items": [
+                { "imgSrc": "/img/home/exhibits-8.jpg" },
+                { "imgSrc": "/img/home/exhibits-7.jpg" },
+                { "imgSrc": "/img/home/exhibits-4.jpg" },
+                { "imgSrc": "/img/home/exhibits-3.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-3.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-1.jpg" }
+            ]
+        },
+        {
+            "category": "Предметы быта",
+            "items": [
+                { "imgSrc": "/img/home/exhibits-8.jpg" },
+                { "imgSrc": "/img/home/exhibits-7.jpg" },
+                { "imgSrc": "/img/home/exhibits-7.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-5.jpg" },
+                { "imgSrc": "/img/home/exhibits-6.jpg" },
+                { "imgSrc": "/img/home/exhibits-2.jpg" },
+                { "imgSrc": "/img/home/exhibits-1.jpg" }
+            ]
+        }
     ]
 }

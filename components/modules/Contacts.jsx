@@ -1,9 +1,9 @@
 import Image from "next/image";
-import styles from "../../styles/home/Contacts.module.scss";
+import styles from "../../styles/modules/Contacts.module.scss";
 
 const Contacts = () => {
     return (
-        <section className={styles.contacts}>
+        <section id="contacts" className={styles.contacts}>
             <div className={`${styles.container} container`}>
                 <div className={`${styles.content} content`}>
                     <div className={styles.column1}>

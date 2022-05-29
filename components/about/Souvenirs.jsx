@@ -10,8 +10,13 @@ const Souvenirs = ({ obj }) => {
     return (
         <section className={styles.souvenirs}>
             <div className={`${styles.container} container`}>
-                <CircleLink theme={"green"} href="/news" mobile={false}>
-                    Смотреть все
+                <CircleLink
+                    onClick={true}
+                    theme={"green"}
+                    href="/news"
+                    mobile={false}
+                >
+                    Оставить заявку
                 </CircleLink>
                 <div className={styles.content}>
                     <h2 className={`${styles.title} stn-title`}>
@@ -78,8 +83,13 @@ const Souvenirs = ({ obj }) => {
                 </div>
             </div>
             <div className={`container`}>
-                <CircleLink theme={"green"} href="/news" mobile={true}>
-                    Смотреть все
+                <CircleLink
+                    onClick={true}
+                    theme={"green"}
+                    href="/news"
+                    mobile={true}
+                >
+                    Оставить заявку
                 </CircleLink>
             </div>
         </section>
