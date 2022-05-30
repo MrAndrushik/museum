@@ -90,6 +90,7 @@
     display: flex;
     justify-content: space-between;
     padding-top: 144px;
+    padding-bottom: 80px;
     width: 65.5%;
     gap: 40px;
     margin-left: 6.25%;
@@ -163,5 +164,9 @@
         max-width: unset;
         margin-left: 0;
         padding-right: 20px;
+    }
+
+    @media (max-width: $md) {
+        margin-bottom: 20px;
     }
 }

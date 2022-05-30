@@ -2,35 +2,35 @@ import styles from "../../styles/modules/News.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-export const getStaticPaths = async () => {
-    const res = await fetch("https://museumapp.vercel.app/api/news");
-    const data = await res.json();
-    const paths = data.map((item) => {
-        return {
-            params: { id: item.id.toString() },
-        };
-    });
+// export const getStaticPaths = async () => {
+//     const res = await fetch("http://localhost:3000/api/news");
+//     const data = await res.json();
+//     const paths = data.map((item) => {
+//         return {
+//             params: { id: item.id.toString() },
+//         };
+//     });
 
-    return {
-        paths,
-        fallback: false,
-    };
-};
+//     return {
+//         paths,
+//         fallback: false,
+//     };
+// };
 
-export const getStaticProps = async (context) => {
-    const id = context.params.id;
-    const res = await fetch("https://museumapp.vercel.app/api/news/" + id);
-    const data = await res.json();
+// export const getStaticProps = async (context) => {
+//     const id = context.params.id;
+//     const res = await fetch("http://localhost:3000/api/news/" + id);
+//     const data = await res.json();
 
-    return {
-        props: { news: data },
-    };
-};
+//     return {
+//         props: { news: data },
+//     };
+// };
 
 // export const getStatic = async () => {
 //     const res = await fetch("/api/news");
-//     const data = await res.json();
-//     console.log(data);
+//     const data = res.json();
+//     conosle.log(data);
 // };
 
 // getStatic();
@@ -43,7 +43,7 @@ const NewsDetails = ({ news }) => {
                     <p className={styles.back}>Вернуться к нашим событиям</p>
                 </Link>
                 <div className={styles.fullWrapper}>
-                    {news.map((item, index) => (
+                    {/* {news.map((item, index) => (
                         <div key={index} className={styles.newsBlockFull}>
                             <div className={styles.imgBlockFull}>
                                 <Image
@@ -73,7 +73,7 @@ const NewsDetails = ({ news }) => {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
             </div>
         </section>

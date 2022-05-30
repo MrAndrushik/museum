@@ -27,22 +27,40 @@ const Hero = () => {
                     />
                 </div>
             </aside>
-            <div className={styles.mobileImg1}>
+            <motion.div
+                className={styles.mobileImg1}
+                animate={{ x: [0, 0, 30, 0], y: [0, -5, 5, 0] }}
+                transition={{
+                    ease: "easeOut",
+                    duration: 7,
+                    repeat: Infinity,
+                    type: "spring",
+                }}
+            >
                 <Image
                     src="/img/home/aside-1.jpg"
                     className="border-1"
                     alt="aside"
                     layout="fill"
                 />
-            </div>
-            <div className={styles.mobileImg2}>
+            </motion.div>
+            <motion.div
+                className={styles.mobileImg2}
+                animate={{ x: [0, 0, -30, 0], y: [0, -10, -10, 0] }}
+                transition={{
+                    ease: "easeOut",
+                    duration: 10,
+                    repeat: Infinity,
+                    type: "spring",
+                }}
+            >
                 <Image
                     src="/img/home/hero-1.jpg"
                     className="border-3"
                     alt="aside"
                     layout="fill"
                 />
-            </div>
+            </motion.div>
             <div className={`${styles.container} container`}>
                 <div className={styles.top}>
                     <h1 className={styles.title}>
@@ -71,7 +89,7 @@ const Hero = () => {
                 <div className={styles.bottom}>
                     <motion.div
                         className={styles.img2}
-                        animate={{ x: [0, -60, 50, 0], y: [0, 50, 30, 0] }}
+                        animate={{ x: [0, -30, 10, 0], y: [0, 50, 30, 0] }}
                         transition={{
                             ease: "easeOut",
                             duration: 8,
