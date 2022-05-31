@@ -1,6 +1,10 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import styles from "../../styles/home/Memories.module.scss";
+import { useSwiper } from "swiper/react";
+import cl from "classnames";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const Memories = ({ tags }) => {
     const [activeTag, setActiveTag] = useState(0);
@@ -10,6 +14,26 @@ const Memories = ({ tags }) => {
         setActiveTag(index);
     };
 
+    const scrollToBottom = () => {
+        const height = ref.current.scrollHeight;
+        ref.current.scrollTo({ top: `${height}`, behavior: "smooth" });
+    };
+
+    function SlideBtn({ type }) {
+        const swiper = useSwiper();
+        return (
+            <button
+                className={cl({
+                    [styles.next]: type === "next",
+                    [styles.prev]: type === "prev",
+                })}
+                onClick={() =>
+                    type === "next" ? swiper.slideNext() : swiper.slidePrev()
+                }
+            ></button>
+        );
+    }
+
     return (
         <section className={styles.memories}>
             <div className={`container`}>
@@ -17,7 +41,7 @@ const Memories = ({ tags }) => {
                     Вспомни свое детство, посетив наш музей
                 </h2>
                 <div className={styles.wrapper}>
-                    <ul className={styles.navbar}>
+                    <ul ref={ref} className={styles.navbar}>
                         {tags.map((tag, index) => (
                             <li
                                 key={tag.title}
@@ -70,18 +94,37 @@ const Memories = ({ tags }) => {
                                         </p>
                                     </div>
                                     <div className={styles.mobileImage}>
-                                        <Image
-                                            priority
-                                            src={tag.imgSrc}
-                                            alt="cartoon"
-                                            width={680}
-                                            height={430}
-                                        />
+                                        <Swiper
+                                            slidesPerView={1}
+                                            spaceBetween={10}
+                                            className={`${styles.swiper}`}
+                                        >
+                                            <SlideBtn type="next" />
+                                            <SlideBtn type="prev" />
+                                            {tag.imgSrc.map((src, index) => (
+                                                <SwiperSlide
+                                                    className={styles.slide}
+                                                    key={index}
+                                                >
+                                                    <Image
+                                                        priority
+                                                        src={src}
+                                                        alt="cartoon"
+                                                        width={680}
+                                                        height={430}
+                                                        objectFit="cover"
+                                                    />
+                                                </SwiperSlide>
+                                            ))}
+                                        </Swiper>
                                     </div>
                                 </div>
                             </li>
                         ))}
-                        <button className={styles.tagBtn}>
+                        <button
+                            onClick={() => scrollToBottom()}
+                            className={styles.tagBtn}
+                        >
                             <svg
                                 width="32"
                                 height="32"
@@ -114,12 +157,34 @@ const Memories = ({ tags }) => {
                             </p>
                         </div>
                         <div className={styles.image}>
-                            <Image
+                            {/* <Image
                                 priority
-                                src={tags[activeTag].imgSrc}
+                                src={tags[activeTag].imgSrc[0]}
                                 alt="cartoon"
                                 layout="fill"
-                            />
+                            /> */}
+                            <Swiper
+                                slidesPerView={1}
+                                spaceBetween={10}
+                                className={`${styles.swiper}`}
+                            >
+                                <SlideBtn type="next" />
+                                <SlideBtn type="prev" />
+                                {tags[activeTag].imgSrc.map((src, index) => (
+                                    <SwiperSlide
+                                        className={styles.slide}
+                                        key={index}
+                                    >
+                                        <Image
+                                            priority
+                                            src={src}
+                                            alt="cartoon"
+                                            layout="fill"
+                                            objectFit="cover"
+                                        />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                         </div>
                     </div>
                 </div>

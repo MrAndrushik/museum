@@ -8,11 +8,9 @@ import cl from "classnames";
 import styles from "../../styles/home/Exhibits.module.scss";
 
 import "swiper/css";
-import SlideBtn from "../modules/SlideBtn";
 
 const Exhibits = ({ obj }) => {
     const [activeCategory, setActiveCategory] = useState("Разное");
-    const swiper = useSwiper();
     const [activeSlide, setActiveSlide] = useState(0);
     const { onOpen, onClose, isOpen } = useModal();
 
@@ -142,7 +140,6 @@ const Exhibits = ({ obj }) => {
                                 />
                             </SwiperSlide>
                         ))}
-                    <SlideBtn type="next" />
                 </Swiper>
             </div>
         </section>

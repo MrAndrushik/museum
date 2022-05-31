@@ -515,10 +515,19 @@ a {
     background: $yellow;
     margin-left: auto;
     margin-bottom: 12px;
+    transition: $transition;
+
+    &:hover {
+        background-color: $yellowDark;
+    }
 
     @media (max-width: $xl) {
         margin: 0 auto 32px auto;
     }
+}
+
+.footer__logo {
+    cursor: pointer;
 }
 
 .footer__buttons {
@@ -534,6 +543,27 @@ a {
 
     @media (max-width: $xl) {
         text-align: center;
+    }
+}
+
+.privacy {
+    padding-top: 140px;
+    @media (max-width: $xl) {
+        padding-top: 112px;
+    }
+}
+
+.privacy__title {
+    margin-bottom: 50px;
+    @media (max-width: $xl) {
+        margin-bottom: 30px;
+    }
+}
+
+.privacy__text {
+    margin-bottom: 20px;
+    @media (max-width: $xl) {
+        margin-bottom: 15px;
     }
 }
 

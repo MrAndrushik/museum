@@ -10,7 +10,11 @@ const Form = ({ title }) => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+    } = useForm({
+        defaultValues: {
+            contact: "telephone",
+        },
+    });
 
     const [isSended, seyIsSended] = React.useState(false);
 

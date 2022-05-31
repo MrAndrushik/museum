@@ -111,7 +111,11 @@ const USSRCorporate = ({ obj }) => {
                 </div>
             </div>
             <div className={`container`}>
-                <CircleLink theme={"yellow"} href={"/"} mobile={true}>
+                <CircleLink
+                    theme={"yellow"}
+                    href={"/meropriatia-ussr"}
+                    mobile={true}
+                >
                     Подробнее
                 </CircleLink>
             </div>

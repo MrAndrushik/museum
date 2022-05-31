@@ -111,7 +111,7 @@
     margin-left: auto;
     position: sticky;
     transform: rotate(90deg);
-    right: 20px;
+    right: 15px;
     bottom: 20px;
     transition: $transition;
 
@@ -238,4 +238,49 @@
     line-height: 28px;
     text-transform: uppercase;
     margin-bottom: 24px;
+}
+
+.swiper {
+    height: 100%;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 32px;
+    background: rgba(0, 0, 0, 0.61) url("../../public/img/home/arrow-modal.svg")
+        no-repeat center center;
+    z-index: 2;
+    transition: $transition;
+    &:hover {
+        opacity: 0.7;
+    }
+
+    @media (max-width: $xl) {
+        display: none;
+    }
+}
+
+.prev {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(180deg);
+    height: 100%;
+    width: 32px;
+    background: rgba(0, 0, 0, 0.61) url("../../public/img/home/arrow-modal.svg")
+        no-repeat center center;
+    z-index: 2;
+    transition: $transition;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    @media (max-width: $xl) {
+        display: none;
+    }
 }

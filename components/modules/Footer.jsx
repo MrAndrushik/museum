@@ -18,13 +18,17 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container footer__container">
-                <Image
-                    className="footer__logo"
-                    src="/img/logo-light.svg"
-                    alt="МУЗЕЙ СОВЕТСКОГО ДЕТСВА"
-                    width={118}
-                    height={64}
-                />
+                <Link href="/">
+                    <a>
+                        <Image
+                            className="footer__logo"
+                            src="/img/logo-light.svg"
+                            alt="МУЗЕЙ СОВЕТСКОГО ДЕТСВА"
+                            width={118}
+                            height={64}
+                        />
+                    </a>
+                </Link>
                 <nav className="footer__nav">
                     <ul className="footer__list">
                         {links.map((link, index) => (
@@ -64,10 +68,10 @@ const Footer = () => {
                         <span>Билеты</span>
                     </button>
                     <div className="footer__item--last">
-                        <Link href="/">
+                        <Link href="/news">
                             <a className="footer__privacy">Наши события</a>
                         </Link>
-                        <Link href="/">
+                        <Link href="/privacy">
                             <a className="footer__privacy">
                                 Политика конфиденциальности
                             </a>
