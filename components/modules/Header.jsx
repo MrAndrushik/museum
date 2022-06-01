@@ -74,11 +74,16 @@ const Header = () => {
                     </a>
                 </Link>
                 <nav className={isOpen ? "nav nav--open" : "nav"}>
-                    <ul className="nav__list">
+                    <ul
+                        itemScope
+                        itemType="http://schema.org/SiteNavigationElement"
+                        className="nav__list"
+                    >
                         {links.map((link, index) => (
                             <li key={index} className="nav__item">
                                 <Link href={link.href}>
                                     <a
+                                        itemProp="url"
                                         onClick={(e) => handleLinks(e)}
                                         className={
                                             router.pathname === link.href

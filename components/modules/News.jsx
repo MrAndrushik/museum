@@ -10,8 +10,15 @@ const News = ({ obj }) => {
                 <CircleLink theme={"green"} href="/news" mobile={false}>
                     Смотреть все
                 </CircleLink>
-                <div className={styles.content}>
-                    <h2 className={`${styles.title} stn-title`}>
+                <div
+                    itemScope
+                    itemType="http://schema.org/Blog"
+                    className={styles.content}
+                >
+                    <h2
+                        itemProp="description"
+                        className={`${styles.title} stn-title`}
+                    >
                         Наши события
                     </h2>
                     <div className={styles.wrapper}>
@@ -19,12 +26,18 @@ const News = ({ obj }) => {
                             (item, index) =>
                                 index < 2 && (
                                     <Link key={index} href={`/news/${item.id}`}>
-                                        <div className={styles.newsBlock}>
+                                        <article
+                                            itemProp="blogPosts"
+                                            itemScope
+                                            itemType="http://schema.org/BlogPosting"
+                                            className={styles.newsBlock}
+                                        >
                                             <div className={styles.imgBlock}>
                                                 <Image
                                                     alt="news-preview"
                                                     src={item.imgSrc}
                                                     layout="fill"
+                                                    itemProp="image"
                                                     objectFit="cover"
                                                 />
                                             </div>
@@ -34,19 +47,28 @@ const News = ({ obj }) => {
                                                     src={item.imgSrc}
                                                     width={680}
                                                     height={500}
+                                                    itemProp="image"
                                                 ></Image>
                                             </div>
                                             <div className={styles.flex}>
-                                                <p className={styles.date}>
+                                                <time
+                                                    itemProp="datePublished"
+                                                    dateTime={`${item.date}`}
+                                                    className={styles.date}
+                                                >
                                                     {item.date}
-                                                </p>
+                                                </time>
                                                 <div>
                                                     <h3
+                                                        itemProp="headline"
                                                         className={`${styles.caption}`}
                                                     >
                                                         {item.title}
                                                     </h3>
-                                                    <p className={`stn-text`}>
+                                                    <p
+                                                        itemProp="description"
+                                                        className={`stn-text`}
+                                                    >
                                                         {item.shortDescr}
                                                     </p>
                                                 </div>
@@ -68,7 +90,7 @@ const News = ({ obj }) => {
                                                     </svg>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </article>
                                     </Link>
                                 )
                         )}

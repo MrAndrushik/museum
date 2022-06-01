@@ -36,12 +36,19 @@ const NewsDetails = ({ news }) => {
                 </Link>
                 <div className={styles.fullWrapper}>
                     {news.map((item, index) => (
-                        <div key={index} className={styles.newsBlockFull}>
+                        <article
+                            itemProp="blogPosts"
+                            itemScope
+                            itemType="http://schema.org/BlogPosting"
+                            key={index}
+                            className={styles.newsBlockFull}
+                        >
                             <div className={styles.imgBlockFull}>
                                 <Image
                                     alt="news-preview"
                                     src={item.imgSrc}
                                     layout="fill"
+                                    itemProp="image"
                                     objectFit="cover"
                                 />
                             </div>
@@ -51,20 +58,33 @@ const NewsDetails = ({ news }) => {
                                     src={item.imgSrc}
                                     width={680}
                                     height={500}
+                                    itemProp="image"
                                 ></Image>
                             </div>
                             <div className={styles.flexFull}>
-                                <p className={styles.fullDate}>{item.date}</p>
+                                <time
+                                    itemProp="datePublished"
+                                    dateTime={`${item.date}`}
+                                    className={styles.fullDate}
+                                >
+                                    {item.date}
+                                </time>
                                 <div>
-                                    <h3 className={`${styles.caption}`}>
+                                    <h3
+                                        itemProp="headline"
+                                        className={`${styles.caption}`}
+                                    >
                                         {item.title}
                                     </h3>
-                                    <p className={`${styles.text} stn-text`}>
+                                    <p
+                                        itemProp="articleBody"
+                                        className={`${styles.text} stn-text`}
+                                    >
                                         {item.fullDescr}
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>

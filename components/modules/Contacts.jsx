@@ -10,17 +10,29 @@ const Contacts = () => {
                         <h2 className={`${styles.title} stn-title`}>
                             Контакты
                         </h2>
-                        <div className={styles.wrapper}>
+                        <div
+                            itemScope
+                            itemType="http://schema.org/LocalBusiness"
+                            className={styles.wrapper}
+                        >
                             <div>
                                 <h3 className={styles.graphic}>Режим работы</h3>
                                 <div className={styles.timeBlock}>
-                                    <p className={styles.time}>
+                                    <time
+                                        itemProp="openingHours"
+                                        dateTime="Mo-Fr, 9:00−18:00"
+                                        className={styles.time}
+                                    >
                                         Пн - Птн <br />с 9:00 - 18:00
-                                    </p>
-                                    <p className={styles.time}>
+                                    </time>
+                                    <time
+                                        itemProp="openingHours"
+                                        dateTime="Sa-Su, 9:00−20:00"
+                                        className={styles.time}
+                                    >
                                         Сб, Вск
                                         <br /> 9:00 - 20:00
-                                    </p>
+                                    </time>
                                 </div>
                             </div>
                             <ul className={styles.data}>
@@ -28,6 +40,7 @@ const Contacts = () => {
                                     <a
                                         href="tel:79996669999"
                                         className={styles.tel}
+                                        itemProp="telephone"
                                     >
                                         +7 999 666 99 99
                                     </a>
@@ -36,6 +49,7 @@ const Contacts = () => {
                                     <a
                                         href="mailto:museumUssr@mail.ru"
                                         className={styles.email}
+                                        itemProp="email"
                                     >
                                         museumUssr@mail.ru
                                     </a>
@@ -43,6 +57,20 @@ const Contacts = () => {
                                 <li>
                                     <a href="#" className={styles.geo}>
                                         г. Москва Егорьевскйи проезд д2/с10
+                                        <span
+                                            itemProp="address"
+                                            itemScope
+                                            itemType="http://schema.org/PostalAddress"
+                                        >
+                                            <meta
+                                                itemProp="streetAddress"
+                                                content="Егорьевскйи проезд д2/с10"
+                                            ></meta>
+                                            <meta
+                                                itemProp="addressLocality"
+                                                content="г. Москва"
+                                            ></meta>
+                                        </span>{" "}
                                     </a>
                                 </li>
                             </ul>
