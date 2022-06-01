@@ -2,7 +2,7 @@ import sendEmail from "../../lib/mail";
 
 export default async function handler(req, res) {
     const message = {
-        to: "mrandrushik@yandex.ru",
+        to: "example@maol.ru",
         subject: `Письмо с сайта museum от ${req.body.firstName}`,
         text: `
 Имя: ${req.body.firstName}
@@ -12,6 +12,5 @@ export default async function handler(req, res) {
         `,
     };
     sendEmail(message);
-    console.log(message);
     res.send(`Спасибо за заявку, ${req.body.name}!`);
 }

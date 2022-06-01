@@ -116,10 +116,6 @@
         min-width: 160px;
         min-height: 120px;
     }
-
-    // @media (max-width: $md) {
-    //     min-width: 49%;
-    // }
 }
 
 .imgBlock1:nth-child(2n),
@@ -161,6 +157,7 @@
 
 .tagContainer {
     width: 100%;
+    scrollbar-width: none;
     position: relative;
     margin-bottom: 10px;
     display: flex;
