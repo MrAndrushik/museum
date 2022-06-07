@@ -516,6 +516,7 @@ a {
     margin-left: auto;
     margin-bottom: 12px;
     transition: $transition;
+    color: $black;
 
     &:hover {
         background-color: $yellowDark;
@@ -572,6 +573,7 @@ a {
     @media (max-width: $xl) {
         background: #f7d1ba !important;
         display: block !important;
+        border-radius: 0px !important;
     }
 }
 
@@ -580,6 +582,7 @@ a {
     @media (max-width: $xl) {
         background: #a2543d !important;
         display: block !important;
+        border-radius: 0px !important;
     }
 }
 

@@ -229,7 +229,7 @@
 }
 
 .mobileImage {
-    height: auto;
+    height: 100%;
 }
 
 .caption {
@@ -258,10 +258,6 @@
     &:hover {
         opacity: 0.7;
     }
-
-    @media (max-width: $xl) {
-        display: none;
-    }
 }
 
 .prev {
@@ -279,8 +275,8 @@
     &:hover {
         opacity: 0.7;
     }
+}
 
-    @media (max-width: $xl) {
-        display: none;
-    }
+.mobileSlide > span {
+    position: static !important;
 }

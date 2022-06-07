@@ -10,8 +10,25 @@ const Memories = ({ tags }) => {
     const [activeTag, setActiveTag] = useState(0);
     const ref = useRef(null);
 
-    const handleTagClick = (index) => {
+    const getCoords = (elem) => {
+        let box = elem.getBoundingClientRect();
+        return {
+            top: box.top + window.pageYOffset,
+        };
+    };
+
+    const handleTagClick = (e, index) => {
         setActiveTag(index);
+        if (window.innerWidth <= 1228) {
+            setTimeout(() => {
+                const position = getCoords(e.target);
+                const offset = e.target.offsetHeight;
+                window.scrollTo({
+                    top: `${position.top - offset}`,
+                    behavior: "smooth",
+                });
+            }, 0);
+        }
     };
 
     const scrollToBottom = () => {
@@ -43,11 +60,9 @@ const Memories = ({ tags }) => {
                 <div className={styles.wrapper}>
                     <ul ref={ref} className={styles.navbar}>
                         {tags.map((tag, index) => (
-                            <li
-                                key={tag.title}
-                                onClick={() => handleTagClick(index)}
-                            >
+                            <li key={tag.title}>
                                 <h3
+                                    onClick={(e) => handleTagClick(e, index)}
                                     className={
                                         index === activeTag
                                             ? `${styles.tag} ${styles.active}`
@@ -103,7 +118,9 @@ const Memories = ({ tags }) => {
                                             <SlideBtn type="prev" />
                                             {tag.imgSrc.map((src, index) => (
                                                 <SwiperSlide
-                                                    className={styles.slide}
+                                                    className={
+                                                        styles.mobileSlide
+                                                    }
                                                     key={index}
                                                 >
                                                     <Image
@@ -157,12 +174,6 @@ const Memories = ({ tags }) => {
                             </p>
                         </div>
                         <div className={styles.image}>
-                            {/* <Image
-                                priority
-                                src={tags[activeTag].imgSrc[0]}
-                                alt="cartoon"
-                                layout="fill"
-                            /> */}
                             <Swiper
                                 slidesPerView={1}
                                 spaceBetween={10}
