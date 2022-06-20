@@ -32,7 +32,7 @@ const NewsDetails = ({ news }) => {
         <section className={styles.currrentNews}>
             <div className={`${styles.fullContainer} container`}>
                 <Link href="/news">
-                    <p className={styles.back}>Вернуться к нашим событиям</p>
+                    <a className={styles.back}>Вернуться к нашим событиям</a>
                 </Link>
                 <div className={styles.fullWrapper}>
                     {news.map((item, index) => (

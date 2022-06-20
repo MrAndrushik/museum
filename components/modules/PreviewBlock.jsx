@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Navigation, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,9 +14,20 @@ import CircleLink from "./CircleLink";
 
 const PreviewBlock = ({ obj, type = "light" }) => {
     const [activeCard, setActiveCard] = useState(0);
+    const ref = useRef(null);
+
+    const handleClick = (index) => {
+        let top = ref.current.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+            top: `${top}`,
+            behavior: "smooth",
+        });
+        setActiveCard(index);
+    };
 
     return (
         <section
+            ref={ref}
             className={cl(styles.previewBlock, {
                 [styles.dark]: type === "dark",
                 [styles.green]: type === "green",
@@ -110,7 +121,7 @@ const PreviewBlock = ({ obj, type = "light" }) => {
                                         key={index}
                                     >
                                         <div
-                                            onClick={() => setActiveCard(index)}
+                                            onClick={() => handleClick(index)}
                                             className={styles.card}
                                         >
                                             <div className={styles.imgBlock}>
