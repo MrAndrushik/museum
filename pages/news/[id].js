@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const getStaticPaths = async () => {
-    const res = await fetch("https://museumapp.vercel.app/api/news");
+    const res = await fetch("http://localhost:3000/api/news");
     const data = await res.json();
     const paths = data.map((item) => {
         return {
@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const res = await fetch("https://museumapp.vercel.app/api/news/" + id);
+    const res = await fetch("http://localhost:3000/api/news/" + id);
     const data = await res.json();
 
     return {
@@ -76,12 +76,12 @@ const NewsDetails = ({ news }) => {
                                     >
                                         {item.title}
                                     </h3>
-                                    <p
-                                        itemProp="articleBody"
-                                        className={`${styles.text} stn-text`}
-                                    >
-                                        {item.fullDescr}
-                                    </p>
+                                    <div
+                                        className={styles.descrBlock}
+                                        dangerouslySetInnerHTML={{
+                                            __html: item.fullDescr,
+                                        }}
+                                    ></div>
                                 </div>
                             </div>
                         </article>

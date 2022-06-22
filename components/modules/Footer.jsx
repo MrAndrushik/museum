@@ -15,6 +15,17 @@ const Footer = () => {
         dispatch(setTicketIsOpen(true));
     };
 
+    const handleLinks = (e) => {
+        if (e && e.target.href.indexOf("#") !== -1) {
+            e.preventDefault();
+            const id = e.target.href.split("#")[1];
+            document.querySelector("#" + id).scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
+        }
+    };
+
     return (
         <footer className="footer">
             <div className="container footer__container">
@@ -35,6 +46,7 @@ const Footer = () => {
                             <li key={index} className="footer__item">
                                 <Link href={link.href}>
                                     <a
+                                        onClick={(e) => handleLinks(e)}
                                         className={
                                             router.pathname === link.href
                                                 ? "footer__link footer__link--active"

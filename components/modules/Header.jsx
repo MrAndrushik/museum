@@ -47,6 +47,14 @@ const Header = () => {
     };
 
     const handleLinks = (e) => {
+        if (e && e.target.href.indexOf("#") !== -1) {
+            e.preventDefault();
+            const id = e.target.href.split("#")[1];
+            document.querySelector("#" + id).scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
+        }
         onClose();
         document.querySelector("html").classList.remove("hidden");
     };
