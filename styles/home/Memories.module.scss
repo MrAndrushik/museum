@@ -41,7 +41,11 @@
     }
 }
 
-.text {
+.descrBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
     font-size: 18px;
     line-height: 26px;
 

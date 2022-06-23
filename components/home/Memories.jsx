@@ -103,10 +103,12 @@ const Memories = ({ tags }) => {
                                         <h3 className={styles.caption}>
                                             {tag.title}
                                         </h3>
-                                        <p className={styles.text}>
-                                            {" "}
-                                            {tag.descr}
-                                        </p>
+                                        <div
+                                            className={styles.descrBlock}
+                                            dangerouslySetInnerHTML={{
+                                                __html: tag.descr,
+                                            }}
+                                        ></div>
                                     </div>
                                     <div className={styles.mobileImage}>
                                         <Swiper
@@ -168,10 +170,12 @@ const Memories = ({ tags }) => {
                             <h3 className={styles.caption}>
                                 {tags[activeTag].title}
                             </h3>
-                            <p className={styles.text}>
-                                {" "}
-                                {tags[activeTag].descr}
-                            </p>
+                            <div
+                                className={styles.descrBlock}
+                                dangerouslySetInnerHTML={{
+                                    __html: tags[activeTag].descr,
+                                }}
+                            ></div>
                         </div>
                         <div className={styles.image}>
                             <Swiper
