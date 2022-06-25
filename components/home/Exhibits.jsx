@@ -15,6 +15,7 @@ const Exhibits = ({ obj }) => {
     const { onOpen, onClose, isOpen } = useModal();
 
     const handleOpen = (index) => {
+        setActiveSlide(index);
         onOpen();
         document.querySelector("html").classList.add("hidden");
     };
@@ -119,28 +120,32 @@ const Exhibits = ({ obj }) => {
                         />
                     </svg>
                 </button>
-
-                <Swiper
-                    slidesPerView={1}
-                    spaceBetween={24}
-                    className={`${styles.swiper}`}
-                    initialSlide={activeSlide}
-                >
-                    <ModalSlideBtn type="next" />
-                    <ModalSlideBtn type="prev" />
-                    {obj.cards
-                        .filter((obj) => obj.category === activeCategory)[0]
-                        .items.map((card, index) => (
-                            <SwiperSlide className={styles.slide} key={index}>
-                                <Image
-                                    objectFit="contain"
-                                    src={card.imgSrc}
-                                    alt="examples"
-                                    layout="fill"
-                                />
-                            </SwiperSlide>
-                        ))}
-                </Swiper>
+                {isOpen && (
+                    <Swiper
+                        slidesPerView={1}
+                        spaceBetween={24}
+                        className={`${styles.swiper}`}
+                        initialSlide={activeSlide}
+                    >
+                        <ModalSlideBtn type="next" />
+                        <ModalSlideBtn type="prev" />
+                        {obj.cards
+                            .filter((obj) => obj.category === activeCategory)[0]
+                            .items.map((card, index) => (
+                                <SwiperSlide
+                                    className={styles.slide}
+                                    key={index}
+                                >
+                                    <Image
+                                        objectFit="contain"
+                                        src={card.imgSrc}
+                                        alt="examples"
+                                        layout="fill"
+                                    />
+                                </SwiperSlide>
+                            ))}
+                    </Swiper>
+                )}
             </div>
         </section>
     );
