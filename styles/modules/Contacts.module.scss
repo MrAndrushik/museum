@@ -16,6 +16,10 @@
 .container {
     display: flex;
     justify-content: flex-end;
+
+    @media (max-width: $xl) {
+        justify-content: space-between;
+    }
 }
 
 .content {
@@ -24,7 +28,7 @@
     gap: 20px;
 
     @media (max-width: $xxl) {
-        width: 100%;
+        width: 100% !important;
     }
 
     @media (max-width: $xl) {
@@ -109,4 +113,13 @@
 .geo {
     background: url("/img/geo.svg") no-repeat 5px center;
     background-size: contain;
+}
+
+.imgBlock {
+    position: relative;
+    width: 650px;
+
+    @media (max-width: $md) {
+        width: unset;
+    }
 }

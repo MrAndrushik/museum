@@ -76,12 +76,17 @@ const Contacts = () => {
                             </ul>
                         </div>
                     </div>
-                    <Image
-                        src="/img/home/map.jpg"
-                        width={710}
-                        height={400}
-                        alt="map"
-                    />
+                    <div className={styles.imgBlock}>
+                        <Image
+                            src="https://static-maps.yandex.ru/1.x/?ll=37.734982,55.673763&z=17&l=map&size=650,450&pt=37.734982,55.673763,org"
+                            width={650}
+                            height={450}
+                            objectFit="cover"
+                            alt="map"
+                            quality={100}
+                            layout="responsive"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
