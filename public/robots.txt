@@ -1,3 +1,2 @@
 User-agent: *
 Disallow: /
-Sitemap: https://museumapp.vercel.app/sitemap.xml
